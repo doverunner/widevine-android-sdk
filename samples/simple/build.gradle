@@ -12,46 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-buildscript {
-    ext {
-        minSdkVersion = 21
-        targetSdkVersion = 34
-        dokkaVersion = '1.9.20'
-        gradleVersion = '8.5.2'
-        kotlinVersion = '1.9.23'
-        nexusVersion = '1.2.0'
-    }
-
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokkaVersion"
-        classpath "io.github.gradle-nexus:publish-plugin:$nexusVersion"
-    }
+plugins {
+    id 'io.github.gradle-nexus.publish-plugin'
 }
 
-allprojects {
-    repositories {
-        maven {
-            url = uri("https://maven.pkg.github.com/inka-pallycon/pallycon-widevine-android-sdk")
-            credentials {
-username = "GitHub ID"
-password = "GitHub Personal Access Token"
-            }
-        }
-        google()
-        mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
+ext {
+    minSdkVersion = 21
+    targetSdkVersion = 35
+    dokkaVersion = '1.9.20'
+    gradleVersion = '8.9.1'
+    kotlinVersion = '2.1.10'
+    nexusVersion = '1.2.0'
 }
 
 

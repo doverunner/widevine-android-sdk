@@ -46,7 +46,7 @@
         <activity android:name=".BrowseErrorActivity"/>
 
         <service
-            android:name="com.pallycon.widevine.service.PallyConDownloadService"
+            android:name="com.doverunner.widevine.service.DrmDownloadService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.exoplayer.downloadService.action.RESTART" />
