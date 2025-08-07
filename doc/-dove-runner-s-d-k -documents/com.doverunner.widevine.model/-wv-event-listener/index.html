@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>WvEventListener</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            DoveRunnerSDK Documents
+                    </a>
+            </div>
+            <div class="library-version">
+4.4.0            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":widevine:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="DoveRunnerSDK Documents::com.doverunner.widevine.model/WvEventListener///PointingToDeclaration//-905191249">
+  <div class="breadcrumbs"><a href="../../../index.html">DoveRunnerSDK Documents</a><span class="delimiter">/</span><a href="../index.html">com.doverunner.widevine.model</a><span class="delimiter">/</span><span class="current">WvEventListener</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Wv</span><wbr></wbr><span>Event</span><wbr></wbr><span><span>Listener</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">interface </span><a href="index.html">WvEventListener</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1665136109%2FFunctions%2F-905191249" anchor-label="onCompleted" id="1665136109%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-completed.html"><span>on</span><wbr></wbr><span><span>Completed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1665136109%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-completed.html"><span class="token function">onCompleted</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called when the download is completed</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-87171438%2FFunctions%2F-905191249" anchor-label="onFailed" id="-87171438%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-failed.html"><span>on</span><wbr></wbr><span><span>Failed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-87171438%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-failed.html"><span class="token function">onFailed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="../../com.doverunner.widevine.exception/-wv-exception/index.html">WvException</a> e</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called when an error occurs inside the SDK. ex) content downloading occurs error, device time modified ..</p></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-failed.html"><span class="token function">onFailed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="../../com.doverunner.widevine.exception/-wv-license-server-exception/index.html">WvLicenseServerException</a> e</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called when an error occurs in the PallyCon DRM server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1448010542%2FFunctions%2F-905191249" anchor-label="onPaused" id="1448010542%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-paused.html"><span>on</span><wbr></wbr><span><span>Paused</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1448010542%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-paused.html"><span class="token function">onPaused</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called on pause download</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-604594979%2FFunctions%2F-905191249" anchor-label="onProgress" id="-604594979%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-progress.html"><span>on</span><wbr></wbr><span><span>Progress</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-604594979%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-progress.html"><span class="token function">onProgress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Float.html">Float</a> percent<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Long.html">Long</a> downloadedBytes</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called on download progressed by 1% when called percentage increase</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1651582206%2FFunctions%2F-905191249" anchor-label="onRemoved" id="-1651582206%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-removed.html"><span>on</span><wbr></wbr><span><span>Removed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1651582206%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-removed.html"><span class="token function">onRemoved</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called on remove download</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-339711821%2FFunctions%2F-905191249" anchor-label="onRestarting" id="-339711821%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-restarting.html"><span>on</span><wbr></wbr><span><span>Restarting</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-339711821%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-restarting.html"><span class="token function">onRestarting</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called on re-start download</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1581892911%2FFunctions%2F-905191249" anchor-label="onStopped" id="1581892911%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-stopped.html"><span>on</span><wbr></wbr><span><span>Stopped</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1581892911%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="on-stopped.html"><span class="token function">onStopped</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-content-data/index.html">ContentData</a> contentData</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">called when the download is stop</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

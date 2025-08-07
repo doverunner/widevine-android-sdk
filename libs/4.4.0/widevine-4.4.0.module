@@ -1,0 +1,207 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.doverunner",
+    "module": "widevine",
+    "version": "4.4.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.11.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "widevine-4.4.0.aar",
+          "url": "widevine-4.4.0.aar",
+          "size": 177626,
+          "sha512": "ae9987ea8985503145a66e15a4446ee7c760709b4baa561b9f3cd5d3d40a94dc9473361b8c6f0dafacd790449bd7398175d0676a548f02041088f6d4b6f8c069",
+          "sha256": "b864188b19a1fc3fe2aba8ee5f59834c66b4439d029ebcb62b54db7c570517ae",
+          "sha1": "d6e0074770abea2ff61b4073a39eb9221899798b",
+          "md5": "404759efb565307aa8304910ea2e3ffe"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "2.1.20"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.13.1"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-dash",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-hls",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-rtsp",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-smoothstreaming",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource-okhttp",
+          "version": {
+            "requires": "1.5.1"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "androidx.security",
+          "module": "security-crypto-ktx",
+          "version": {
+            "requires": "1.1.0-alpha06"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "widevine-4.4.0.aar",
+          "url": "widevine-4.4.0.aar",
+          "size": 177626,
+          "sha512": "ae9987ea8985503145a66e15a4446ee7c760709b4baa561b9f3cd5d3d40a94dc9473361b8c6f0dafacd790449bd7398175d0676a548f02041088f6d4b6f8c069",
+          "sha256": "b864188b19a1fc3fe2aba8ee5f59834c66b4439d029ebcb62b54db7c570517ae",
+          "sha1": "d6e0074770abea2ff61b4073a39eb9221899798b",
+          "md5": "404759efb565307aa8304910ea2e3ffe"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "widevine-4.4.0-sources.jar",
+          "url": "widevine-4.4.0-sources.jar",
+          "size": 50271,
+          "sha512": "b91a72594ade9bf31ebbbc2146425a1ccf00ef84d89aac95ac0b492e18af8ab856ce48cdbadd59d9397c29d35eadd09bb0d2d625fb533e2d92d75a33feda822c",
+          "sha256": "7073d24bd45e37c3a9035212a97da3dd17539966d179273df6e4dcb96bef54c3",
+          "sha1": "78c07754fbc05a788fb0e8d13307a9ec40e01c5c",
+          "md5": "c31aea257a8e62eb4c5df8edda972a2e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "widevine-4.4.0-javadoc.jar",
+          "url": "widevine-4.4.0-javadoc.jar",
+          "size": 478078,
+          "sha512": "7d53d1826b602e0e81c5b586154eaf40fe7985dcc32e68836843f0efe26147f2ad8003e20f3a022565049c19deb3c47ff1919ce53bec80cf33a16705b0d59e19",
+          "sha256": "942bff79d0b9320e5b559840acf892920aae5aea8811837608892b819f96adf4",
+          "sha1": "c52ff2cf7a32290704c011fdf43c6528239526df",
+          "md5": "4f6b1c14381f7a158103cf840691185b"
+        }
+      ]
+    }
+  ]
+}
