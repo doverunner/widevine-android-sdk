@@ -1,3 +1,30 @@
+# Version 4.4.0
+
+- **Changed The product brand name will be changed to DOVERUNNER:**
+  - DOVERUNNER(Dr) is the new name for PallyCon.
+  - We are changing the names of various products related to the existing PallyCon content security service to DOVERUNNER(Dr).
+  - During this time, some documents and code on the Docs site may use PallyCon and DOVERUNNER(Dr) interchangeably.
+  - The group name for the sdk has been changed to `com.doverunner.widevine`.
+  - The class name of the sdk has been changed from `PallyConWvSDK` to `DrWvSDK`.
+  - The class name of the `PallyConDrmConfigration` has been changed to `DrmConfigration`.
+  - The class name of the `PallyConEventListener` has been changed to `DrEventListener`.
+  - The class name of the `PallyConCallback` has been changed to `DrCallback`.
+  - The class name of the `PallyConDownloadManager` has been changed to `DrDownloadManager`.
+  - The class name of the `PallyConDownloadService` has been changed to `DrDownloadService`.
+  - The class name of the `PallyConDownloadTask` has been changed to `DrDownloadTask`.
+  - The class name of the `PallyConDownloadRequest` has been changed to `DrDownloadRequest`.
+  - The class name of the `PallyConDownloadListener` has been changed to `DrDownloadListener`.
+  - The class name of the `PallyConDownloadStatus` has been changed to `DrDownloadStatus`.
+  - The class name of the `PallyConDownloadException` has been changed to `DrDownloadException`.
+  - The class name of the `PallyConException` has been changed to `WvException`.
+  - The function name `createPallyConWvSDK` has been changed to `createWvSDK`.
+  - The function name `setPallyConCallback` has been changed to `setWvCallback`.
+  - The function name `addPallyConEventListener` has been changed to `addWvEventListener`.
+  - The function name `removePallyConEventListener` has been changed to `removeWvListener`.
+  
+- **Updated `getMediaSource` function:**
+    - Updated to also work for Streaming content if you have a persistent license in advance.
+
 # Version 4.3.2
 
 - **Added `ClearKeyLicenseException` exception:**

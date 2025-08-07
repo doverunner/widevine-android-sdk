@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>DrmConfigration</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            DoveRunnerSDK Documents
+                    </a>
+            </div>
+            <div class="library-version">
+4.4.0            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":widevine:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="DoveRunnerSDK Documents::com.doverunner.widevine.model/DrmConfigration///PointingToDeclaration//-905191249">
+  <div class="breadcrumbs"><a href="../../../index.html">DoveRunnerSDK Documents</a><span class="delimiter">/</span><a href="../index.html">com.doverunner.widevine.model</a><span class="delimiter">/</span><span class="current">DrmConfigration</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Drm</span><wbr></wbr><span><span>Configration</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><span class="token keyword">class </span><a href="index.html">DrmConfigration</a><span class="token keyword"> implements </span><a href="https://developer.android.com/reference/kotlin/android/os/Parcelable.html">Parcelable</a></div><p class="paragraph">A Config class for acquire license</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="697426360%2FConstructors%2F-905191249" anchor-label="DrmConfigration" id="697426360%2FConstructors%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-drm-configration.html"><span>Drm</span><wbr></wbr><span><span>Configration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="697426360%2FConstructors%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="index.html">DrmConfigration</a> <a href="-drm-configration.html"><span class="token function">DrmConfigration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> token</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="index.html">DrmConfigration</a> <a href="-drm-configration.html"><span class="token function">DrmConfigration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> siteId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> token</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="index.html">DrmConfigration</a> <a href="-drm-configration.html"><span class="token function">DrmConfigration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> siteId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> siteKey<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> token<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> customData<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span> httpHeaders<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> cookie<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> licenseCipherPath<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> drmLicenseUrl<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/UUID.html">UUID</a> uuid</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="543143968%2FClasslikes%2F-905191249" anchor-label="Builder" id="543143968%2FClasslikes%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-builder/index.html"><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="543143968%2FClasslikes%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><span class="token keyword">class </span><a href="-builder/index.html">Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-544329874%2FProperties%2F-905191249" anchor-label="cookie" id="-544329874%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-544329874%2FProperties%2F-905191249"><span><span>cookie</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-544329874%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#-544329874%2FProperties%2F-905191249">cookie</a></div><div class="brief "><p class="paragraph">The cookie information required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1547262071%2FProperties%2F-905191249" anchor-label="customData" id="1547262071%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1547262071%2FProperties%2F-905191249"><span>custom</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1547262071%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#1547262071%2FProperties%2F-905191249">customData</a></div><div class="brief "><p class="paragraph">A customData required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="429993147%2FProperties%2F-905191249" anchor-label="drmLicenseUrl" id="429993147%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#429993147%2FProperties%2F-905191249"><span>drm</span><wbr></wbr><span>License</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="429993147%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#429993147%2FProperties%2F-905191249">drmLicenseUrl</a></div><div class="brief "><p class="paragraph">The URL is the domain address to try to obtain a license.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2022515926%2FProperties%2F-905191249" anchor-label="httpHeaders" id="-2022515926%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-2022515926%2FProperties%2F-905191249"><span>http</span><wbr></wbr><span><span>Headers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2022515926%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span> <a href="index.html#-2022515926%2FProperties%2F-905191249">httpHeaders</a></div><div class="brief "><p class="paragraph">A custom header required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-339344329%2FProperties%2F-905191249" anchor-label="licenseCipherPath" id="-339344329%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-339344329%2FProperties%2F-905191249"><span>license</span><wbr></wbr><span>Cipher</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-339344329%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#-339344329%2FProperties%2F-905191249">licenseCipherPath</a></div><div class="brief "><p class="paragraph">Set to true if you want to communicate with the server using the PallyCon License Cipher feature. For more information, please send a request to PallyCon.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="666668240%2FProperties%2F-905191249" anchor-label="siteId" id="666668240%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#666668240%2FProperties%2F-905191249"><span>site</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="666668240%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#666668240%2FProperties%2F-905191249">siteId</a></div><div class="brief "><p class="paragraph">A SiteID information obtained from the PallyCon admin.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1396393520%2FProperties%2F-905191249" anchor-label="siteKey" id="1396393520%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1396393520%2FProperties%2F-905191249"><span>site</span><wbr></wbr><span><span>Key</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1396393520%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#1396393520%2FProperties%2F-905191249">siteKey</a></div><div class="brief "><p class="paragraph">A SiteKey information obtained from the PallyCon admin.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2102034513%2FProperties%2F-905191249" anchor-label="token" id="-2102034513%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-2102034513%2FProperties%2F-905191249"><span><span>token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2102034513%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="index.html#-2102034513%2FProperties%2F-905191249">token</a></div><div class="brief "><p class="paragraph">A Token required for license acquisition. have to customData or token</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="699336503%2FProperties%2F-905191249" anchor-label="uuid" id="699336503%2FProperties%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#699336503%2FProperties%2F-905191249"><span><span>uuid</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="699336503%2FProperties%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/UUID.html">UUID</a> <a href="index.html#699336503%2FProperties%2F-905191249">uuid</a></div><div class="brief "><p class="paragraph">UUID for the DRM scheme.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1578325224%2FFunctions%2F-905191249" anchor-label="describeContents" id="-1578325224%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-drm-information/index.html#-1578325224%2FFunctions%2F-905191249"><span>describe</span><wbr></wbr><span><span>Contents</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1578325224%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a> <a href="../-drm-information/index.html#-1578325224%2FFunctions%2F-905191249"><span class="token function">describeContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1274278418%2FFunctions%2F-905191249" anchor-label="getCookie" id="-1274278418%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-cookie.html"><span>get</span><wbr></wbr><span><span>Cookie</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1274278418%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-cookie.html"><span class="token function">getCookie</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The cookie information required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-375130377%2FFunctions%2F-905191249" anchor-label="getCustomData" id="-375130377%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-custom-data.html"><span>get</span><wbr></wbr><span>Custom</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-375130377%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-custom-data.html"><span class="token function">getCustomData</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A customData required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-469500357%2FFunctions%2F-905191249" anchor-label="getDrmLicenseUrl" id="-469500357%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-drm-license-url.html"><span>get</span><wbr></wbr><span>Drm</span><wbr></wbr><span>License</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-469500357%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-drm-license-url.html"><span class="token function">getDrmLicenseUrl</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The URL is the domain address to try to obtain a license.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1487139670%2FFunctions%2F-905191249" anchor-label="getHttpHeaders" id="-1487139670%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-http-headers.html"><span>get</span><wbr></wbr><span>Http</span><wbr></wbr><span><span>Headers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1487139670%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span> <a href="get-http-headers.html"><span class="token function">getHttpHeaders</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A custom header required for license acquisition.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1029969335%2FFunctions%2F-905191249" anchor-label="getLicenseCipherPath" id="1029969335%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-license-cipher-path.html"><span>get</span><wbr></wbr><span>License</span><wbr></wbr><span>Cipher</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1029969335%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-license-cipher-path.html"><span class="token function">getLicenseCipherPath</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Set to true if you want to communicate with the server using the PallyCon License Cipher feature. For more information, please send a request to PallyCon.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-63280304%2FFunctions%2F-905191249" anchor-label="getSiteId" id="-63280304%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-site-id.html"><span>get</span><wbr></wbr><span>Site</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-63280304%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-site-id.html"><span class="token function">getSiteId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A SiteID information obtained from the PallyCon admin.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="242825136%2FFunctions%2F-905191249" anchor-label="getSiteKey" id="242825136%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-site-key.html"><span>get</span><wbr></wbr><span>Site</span><wbr></wbr><span><span>Key</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="242825136%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-site-key.html"><span class="token function">getSiteKey</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A SiteKey information obtained from the PallyCon admin.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1338102063%2FFunctions%2F-905191249" anchor-label="getToken" id="1338102063%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-token.html"><span>get</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1338102063%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a> <a href="get-token.html"><span class="token function">getToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A Token required for license acquisition. have to customData or token</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1225950647%2FFunctions%2F-905191249" anchor-label="getUuid" id="1225950647%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-uuid.html"><span>get</span><wbr></wbr><span><span>Uuid</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225950647%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/UUID.html">UUID</a> <a href="get-uuid.html"><span class="token function">getUuid</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">UUID for the DRM scheme.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1754457655%2FFunctions%2F-905191249" anchor-label="writeToParcel" id="-1754457655%2FFunctions%2F-905191249" data-filterable-set=":widevine:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":widevine:dokkaHtml/release" data-filterable-set=":widevine:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-drm-information/index.html#-1754457655%2FFunctions%2F-905191249"><span>write</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Parcel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1754457655%2FFunctions%2F-905191249"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":widevine:dokkaHtml/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a> <a href="../-drm-information/index.html#-1754457655%2FFunctions%2F-905191249"><span class="token function">writeToParcel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/os/Parcel.html">Parcel</a> p0<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a> p1</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
