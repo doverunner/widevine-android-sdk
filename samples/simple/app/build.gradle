@@ -1,16 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
 }
 
 android {
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
-        applicationId "com.pallycon.exoplayersample.simple"
+        applicationId "com.doverunner.exoplayersample.simple"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -30,7 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     ndkVersion '24.0.8215888'
-    namespace 'com.pallycon.exoplayersample.simple'
+    namespace 'com.doverunner.exoplayersample.simple'
 }
 
 dependencies {
@@ -40,20 +40,20 @@ dependencies {
     
 
     implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
 
-    implementation "androidx.core:core-ktx:1.13.1"
+    implementation "androidx.core:core-ktx:1.15.0"
     implementation "com.google.android.material:material:1.12.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
 
     // Exo
-    implementation "androidx.media3:media3-exoplayer:1.4.1"
-    implementation "androidx.media3:media3-ui:1.4.1"
-    implementation "androidx.media3:media3-exoplayer-dash:1.4.1"
-    implementation "androidx.media3:media3-exoplayer-hls:1.4.1"
-    implementation "androidx.media3:media3-exoplayer-rtsp:1.4.1"
-    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.4.1"
-    implementation "androidx.media3:media3-datasource-okhttp:1.4.1"
+    implementation "androidx.media3:media3-exoplayer:1.5.1"
+    implementation "androidx.media3:media3-ui:1.5.1"
+    implementation "androidx.media3:media3-exoplayer-dash:1.5.1"
+    implementation "androidx.media3:media3-exoplayer-hls:1.5.1"
+    implementation "androidx.media3:media3-exoplayer-rtsp:1.5.1"
+    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.5.1"
+    implementation "androidx.media3:media3-datasource-okhttp:1.5.1"
 
     // Gson
     implementation "com.google.code.gson:gson:2.11.0"
