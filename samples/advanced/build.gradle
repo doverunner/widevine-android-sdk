@@ -16,15 +16,6 @@ plugins {
     id 'io.github.gradle-nexus.publish-plugin'
 }
 
-ext {
-    minSdkVersion = 21
-    targetSdkVersion = 35
-    dokkaVersion = '1.9.20'
-    gradleVersion = '8.9.1'
-    kotlinVersion = '2.1.10'
-    nexusVersion = '1.2.0'
-}
-
 
 
 
