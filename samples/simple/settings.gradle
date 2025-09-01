@@ -1,96 +1,48 @@
 pluginManagement {
-include ':app'
     repositories {
-include ':app'
         mavenLocal()
-include ':app'
         google()
-include ':app'
         mavenCentral()
-include ':app'
+
         gradlePluginPortal()
-include ':app'
         maven {
-include ':app'
             url "https://plugins.gradle.org/m2/"
-include ':app'
         }
-include ':app'
     }
-include ':app'
-include ':app'
+
     plugins {
-include ':app'
         id 'com.android.library' version '8.9.1' apply false
-include ':app'
         id 'com.android.application' version '8.9.1' apply false
-include ':app'
         id 'org.jetbrains.kotlin.android' version '2.1.10' apply false
-include ':app'
         id 'org.jetbrains.kotlin.plugin.parcelize' version "2.1.20"
-include ':app'
         id 'org.jetbrains.dokka' version '1.9.20' apply false
-include ':app'
         id 'io.github.gradle-nexus.publish-plugin' version '1.2.0' apply false
-include ':app'
     }
-include ':app'
 }
-include ':app'
-include ':app'
+
+
 dependencyResolutionManagement {
-include ':app'
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-include ':app'
     repositories {
-include ':app'
         mavenLocal()
-include ':app'
         google()
-include ':app'
         mavenCentral()
-include ':app'
         maven {
-include ':app'
             url "https://plugins.gradle.org/m2/"
-include ':app'
         }
-include ':app'
         // GitHub 패키지 저장소 (필요한 경우 주석 해제)
-include ':app'
 //        maven {
-include ':app'
 //            name = "GitHubPackages"
-include ':app'
 //            url = uri("https://maven.pkg.github.com/doverunner/widevine-android-sdk")
-include ':app'
 //            credentials {
-include ':app'
-//                username = "Git hub ID"
-include ':app'
-//                password = "password"
-include ':app'
+//                username = "GitHub ID"
+//                password = "GitHub Access Token"
 //            }
-include ':app'
+//
 //        }
-include ':app'
+
     }
-include ':app'
+
 }
-include ':app'
-include ':app'
-include ':app'
-//include ':pallyconsample'
-include ':app'
-//include ':migrationsample'
-include ':app'
-include ':app'
-include ':app'
-include ':app'
-//include ':widevinelibrary'
-include ':app'
-include ':app'
-include ':app'
-include ':app'
-include ':app'
+
 include ':app'
