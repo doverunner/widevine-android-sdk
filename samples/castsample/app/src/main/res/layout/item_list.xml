@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:minHeight="64dp"
-            style="@style/Theme.PallyconSample.ItemSelectable"
+            style="@style/Theme.CastSample.ItemSelectable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
