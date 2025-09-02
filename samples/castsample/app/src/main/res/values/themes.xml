@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.DrSample" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.CastSample" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -17,12 +17,12 @@
         <item name="android:colorBackground">@color/white</item>
     </style>
 
-    <style name="Theme.DrSample.NoActionBar">
+    <style name="Theme.CastSample.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.DrPlayer.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+    <style name="Theme.CastSample.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
     <style name="EditTextGreyStyle" parent="Widget.Design.TextInputLayout">
         <item name="colorControlNormal">@color/white</item>
@@ -34,7 +34,7 @@
         <item name="hintTextColor">@color/gray_300</item>
     </style>
 
-    <style name="Theme.DrSample.ItemSelectable" />
+    <style name="Theme.CastSample.ItemSelectable" />
 
     <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="iconPadding">0dp</item>
@@ -51,7 +51,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.PallyConWVSDK.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.DrWVSDK.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.PallyConWVSDK.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.DrWVSDK.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
