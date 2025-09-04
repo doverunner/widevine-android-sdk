@@ -7,7 +7,7 @@ Please refer to the links below for detailed information.
 
 ## Reference Links
 
-- [SDK Guide document](https://doverunner.com/docs/en/multidrm/clients/widevine-android/)
+- [SDK Guide document](https://doverunner.com/docs/content-security/multi-drm/clients/widevine-android/)
 - [SDK API Reference](https://github.com/doverunner/doverunner-widevine-android-sdk/tree/main/doc)
-- [DoveRunner Multi-DRM License Token Guide](https://doverunner.com/docs/en/multidrm/license/license-token)
-- [Helpdesk for technical support](https://pallycon.zendesk.com)
+- [DoveRunner Multi-DRM License Token Guide](https://doverunner.com/docs/content-security/multi-drm/license/license-token/)
+- [Helpdesk for technical support](https://support.doverunner.com)
