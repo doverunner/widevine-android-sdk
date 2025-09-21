@@ -25,6 +25,7 @@ import com.doverunner.widevine.model.DownloadState
 import com.doverunner.widevine.model.WvCallback
 import com.doverunner.widevine.model.WvEventListener
 import com.doverunner.widevine.sdk.DrWvSDK
+import com.google.common.io.ByteStreams
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -193,7 +194,7 @@ class MainActivity : AppCompatActivity() {
                 it.write(keyData, 0, keyData.size)
             }
 
-            return Util.toByteArray(conn.inputStream)
+            return ByteStreams.toByteArray(conn.inputStream)
         }
     }
 

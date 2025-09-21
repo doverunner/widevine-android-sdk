@@ -25,7 +25,7 @@ public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPrese
 		// TODO : Show the settings on the screen.
 		if (movie != null) {
 			viewHolder.getTitle().setText(movie.name);
-			viewHolder.getSubtitle().setText("DoveRunner");
+			viewHolder.getSubtitle().setText("INKA Studio");
 			viewHolder.getBody().setText("CID : " + movie.cid + "\n" +
 							"TOKEN : " + movie.token );
 		}

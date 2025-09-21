@@ -1,0 +1,202 @@
+# Version 4.5.0
+
+- **Updated minimum Android version:**
+  - Minimum supported Android version: Updated to `6.0.0`
+  - Minimum API level: Updated to `23` 
+- **Updated JVM:**
+  - jvmTarget: Updated to `17`
+- **Updated Libraries:**
+  - media3: Updated to `1.8.0`
+- **The Groovy DSL has been migrated to Kotlin DSL.**
+  - 'build.gradle' has been changed to 'build.gradle.kts'
+- **The samples have been changed to a version control system using TOML.**
+  - add 'libs.versions.toml' in gradle directory for samples
+- **ContentData class modifications:**
+  - The `localFileUrl` parameter has been added.
+    - the parameters for playing content downloaded in version 2.x.x.
+- **DrmConfigration class modifications:**
+  - The `authData` parameter has been added. 
+    - `authData` is now used instead of `token` or `customData`.
+
+# Version 4.4.0
+
+- **Changed The product brand name will be changed to DoveRunner:**
+  - DoveRunner(Dr) is the new name for PallyCon.
+  - We are changing the names of various products related to the existing PallyCon content security service to DoveRunner(Dr).
+  - During this time, some documents and code on the Docs site may use PallyCon and DoveRunner(Dr) interchangeably.
+  - The group name for the sdk has been changed to `com.doverunner.widevine`.
+  - The class name of the sdk has been changed from `PallyConWvSDK` to `DrWvSDK`.
+  - The class name of the `PallyConDrmConfigration` has been changed to `DrmConfigration`.
+  - The class name of the `PallyConEventListener` has been changed to `DrEventListener`.
+  - The class name of the `PallyConCallback` has been changed to `DrCallback`.
+  - The class name of the `PallyConDownloadManager` has been changed to `DrDownloadManager`.
+  - The class name of the `PallyConDownloadService` has been changed to `DrDownloadService`.
+  - The class name of the `PallyConDownloadTask` has been changed to `DrDownloadTask`.
+  - The class name of the `PallyConDownloadRequest` has been changed to `DrDownloadRequest`.
+  - The class name of the `PallyConDownloadListener` has been changed to `DrDownloadListener`.
+  - The class name of the `PallyConDownloadStatus` has been changed to `DrDownloadStatus`.
+  - The class name of the `PallyConDownloadException` has been changed to `DrDownloadException`.
+  - The class name of the `PallyConException` has been changed to `WvException`.
+  - The function name `createPallyConWvSDK` has been changed to `createWvSDK`.
+  - The function name `setPallyConCallback` has been changed to `setWvCallback`.
+  - The function name `addPallyConEventListener` has been changed to `addWvEventListener`.
+  - The function name `removePallyConEventListener` has been changed to `removeWvListener`.
+  
+- **Updated `getMediaSource` function:**
+    - Updated to also work for Streaming content if you have a persistent license in advance.
+
+# Version 4.3.2
+
+- **Added `ClearKeyLicenseException` exception:**
+  - Added an error that occurs when attempting to download a license for clearkey or non-DRM content.
+
+- **Updated `download()` function:**
+  - downloads of Clearkey or NonDRM content will proceed even if you don't have a license to download it.
+
+- **Updated `getMediaSource()` and `getMediaItem` function:**
+  - When calling the function while downloading, get the media of the content being downloaded.
+
+# Version 4.3.1
+
+- **Updated Libraries:**
+    - media3: Updated to `1.4.1`
+
+# Version 4.3.0
+
+- **Support for license policy 2.0:**
+    - The SDK now processes license data according to policy 2.0 specifications.
+    - `setPallyConCallback()`, `setDownloadService()` and `getDownloadManager()` have been changed to static functions.
+    - Use `PallyConWvSDK.setPallyConCallback()` from now on.
+    - The old `setPallyConCallback()` and `setDownloadService()` functions are deprecated.
+
+- **Event listener functions added:**
+    - `addPallyConEventListener()` and `removePallyConEventListener()` functions are now available.
+    - You can register and remove `PallyConEventListener`.
+    - The old `setPallyConEventListener()` function is deprecated.
+
+- **New setCmcdConfigurationFactory() function:**
+    - Configure Common Media Client Data (CMCD) for your CDN real-time logs.
+
+- **Updated `PallyConCallback` interface:**
+    - The `executeKeyRequest` function parameter has been changed from `url` to `contentData`.
+
+- **Updated Libraries:**
+    - core: Updated to `1.13.1`
+    - appCompat: Updated to `1.7.0`
+    - material: Updated to `1.12.0`
+    - coroutines: Updated to `1.8.1`
+    - media3: Updated to `1.3.1`
+    - gson: Updated to `2.11.0`
+    - security: Updated to `1.1.0-alpha06`
+
+# Version 4.2.0
+
+- **New stop() function added:**
+  - Content downloads can now be interrupted.
+  - Interrupted downloads can be resumed later.
+
+- **Changes to PallyConEventListener event listeners:**
+  - The `contentUrl` parameter has been replaced with `ContentData(contentId, url, ..., drmConfig)`.
+
+- **ContentData class modifications:**
+  - The `localPath` parameter has been removed.
+  - Added `setDownloadDirectory()` static function to set the download directory.
+  - Separate directories for each content are no longer supported (this matches the behavior of the old code).
+
+# Version 4.1.0
+
+>- PallyConSDK has been updated to version 4.1.0.
+>  - Fixed redownload not happening if remove after pause
+
+# Version 4.0.1
+
+>- PallyConSDK has been updated to version 4.0.1.
+   >  - Added a "getDrmSessionManager" function.
+   >  - Added "getMediaSource" function that utilizes the drmSessionManager parameter.
+   >    -  You can specify a drmSessionManager to create the mediaSource object.
+   >  - Fixed an issue that caused the download() function to crash when running in the main thread from now on.
+   >    - A function runs as a background thread under the hood.
+   >  - Fixed crash when selecting more than one video track
+
+# Version 4.0.0
+
+>- PallyConSDK has been updated to version 4.0.0
+   >  - Changed the ExoPlayer Package -> Media3 Package
+
+# Version 3.4.6
+
+>- PallyConSDK has been updated to version 3.4.6.
+   >  - Fixed an issue where the license key rotation feature for live content was not working correctly.
+
+# Version 3.4.5
+
+>- PallyConSDK has been updated to version 3.4.5.
+   >  - Added a PallyConLicenseCipherException.
+
+# Version 3.4.3
+
+>- PallyConSDK has been updated to version 3.4.3.
+   >  - Fixed an internal error.
+
+# Version 3.4.2
+
+>- PallyConSDK has been updated to version 3.4.2.
+   >  - Starting with 3.4.2, DB migration between 2.X.X versions is not supported.
+>  - Removed "removeOldDownloadedContentDB" function
+
+# Version 3.4.1
+
+>- PallyConSDK has been updated to version 3.4.1.
+   >  - Fixed the LicenseCipher feature part.
+
+# Version 3.4.0
+
+> - PallyConSDK has been updated to version 3.4.0. 
+>   - Added contentId member variable to "ContentData" class.
+>     - For content management, the contentId used in the 2.x.x version range has been added back..
+>       If you don't enter a contentId, the content will be managed by url. 
+>   - We've changed how we handle the migration of historical content.
+>     - Added "needsMigrateDownloadedContent" function to check whether the content needs to be migrated or not. If that function returns true, you can run the "migrateDownloadedContent" function.
+>     - Added "removeOldDownloadedContentDB" function can remove the DB of content that was downloaded before the SDK 2.x.x version. 
+>   - Added a format parameter to the "downloadLicense" function. 
+>     - If it's null, the format value is taken directly from the content url(remote content) internally to download the license.
+>   - Added a "setDownloadService" and "getDownloadManager" functions.
+>     - Can now turn off the default applied alarm and use the DownloadService set by the customer.
+>     - Can add their own using the setDownloadService function.
+>     - Additionally, the DownloadManager object needed to create the DownloadService can now be retrieved using the getDownloadManager function.
+>   - Added licenseCipherPath member variable to "PallyConDrmConfigration" class
+>     - This is a member variable added for customers using PallyCon LicenseCipher and has a default value of null.
+>     - For more information, please contact us at PallyCon.
+
+# Version 3.3.0
+
+> - PallyConSDK has been updated to version 3.3.0.
+>   - Added "setPallyConCallback" function and "PallyConCallback" interface
+>     - You can handle the communication part with the server when getting the license as a callback.
+>     - In the callback, you can further proceed with things like encrypting the data. 
+>   - Modified HLS download.
+
+# Version 3.2.0
+
+> - PallyConSDK has been updated to version 3.2.0. 
+>   - Added download and play for HLS(m3u8) widevine contents 
+>   - Added download for Non-DRM contents
+
+# Version 3.1.0
+
+> - PallyConSDK has been updated to version 3.1.0. 
+>   - Added migration function "migrate Downloaded Content" for users existing 2.x versions. 
+>   - Changed "createPallyConWvSDK" function. instead of entering a PallyConEventListener object as a "createPallyConWvSDK" parameter, set it using the "setPallyConEventListener" function. 
+>   - Existing 2.x.x customers must call in advance. 
+
+# Version 3.0.1
+
+> - PallyConSDK has been updated to version 3.0.1. 
+>   - Bug fix, Crash occurs when the getContentTrackInfo() function is called multiple times while offline
+
+# Version 3.0.0
+
+> - PallyConSDK has been updated to version 3.0.0. 
+>   - PallyConSDK 3.0.0 is based on Kotlin and can be used in java. 
+>   - All of the APIs used in the previous 2.x.x version have been changed. 
+>   - From now on, background multi-download (max 6) is supported.

@@ -1,0 +1,170 @@
+[versions]
+# DoveRunner
+
+cmcd = "1.0.0"
+
+# Build
+androidGradle = "8.12.2"
+kotlin = "2.2.10"
+ksp = "2.2.10-2.0.2"
+
+# Android SDK
+compileSdk = "36"
+minSdk = "23"
+targetSdk = "36"
+
+# AndroidX
+coreKtx = "1.17.0"
+appcompat = "1.7.1"
+material = "1.13.0"
+constraintlayout = "2.2.1"
+navigation = "2.9.3"
+lifecycle = "2.9.3"
+recyclerview = "1.4.0"
+leanback = "1.2.0"
+preference = "1.2.1"
+datastore = "1.1.7"
+
+# Kotlin
+kotlinBom = "2.2.10"
+
+# Compose
+compose = "1.8.2"
+composeUI = "1.9.0"
+composeMaterial3 = "1.3.2"
+composeActivity = "1.10.1"
+composeKotlin = "2.2.10"
+composeKotlinCompiler = "1.5.15"
+composeBom = "2025.08.01"
+
+# Media3
+media3 = "1.8.0"
+
+# Network & Serialization
+gson = "2.13.1"
+coroutines = "1.10.2"
+serialization = "1.9.0"
+
+# Security
+securityCrypto = "1.1.0"
+
+# Architecture
+room = "2.7.2"
+hilt = "2.57.1"
+
+# Image Loading
+glide = "5.0.4"
+
+# publishing
+nexus-publish-plugin = "2.0.0"
+
+# Dokka
+dokka = "2.0.0"
+
+# Testing
+junit = "4.13.2"
+espresso = "3.7.0"
+ext-junit = "1.3.0"
+core-testing = "1.7.0"
+mock-webserver = "5.1.0"
+mock-core = "5.19.0"
+mock-kotlin = "6.0.0"
+truth = "1.4.4"
+playServicesTasks = "18.3.2"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradle" }
+android-library = { id = "com.android.library", version.ref = "androidGradle" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+room = { id = "androidx.room", version.ref = "room" }
+nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus-publish-plugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+jetpack-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+jetpack-composeKotlin = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "composeKotlin" }
+
+[libraries]
+# Core Android
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+
+# Architecture
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# UI
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
+androidx-leanback = { module = "androidx.leanback:leanback", version.ref = "leanback" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "preference" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference" }
+androidx-datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+
+# Compose
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "composeUI" }
+androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics", version.ref = "composeUI" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeUI" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "composeMaterial3" }
+androidx-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-compose-livedata = { module = "androidx.lifecycle:lifecycle-livedata-compose", version.ref = "lifecycle" }
+androidx-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
+androidx-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+
+# Kotlin
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlinBom" }
+
+# Database
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+
+# Media3
+media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "media3" }
+media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3" }
+media3-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "media3" }
+media3-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref = "media3" }
+media3-rtsp = { module = "androidx.media3:media3-exoplayer-rtsp", version.ref = "media3" }
+media3-smoothstreaming = { module = "androidx.media3:media3-exoplayer-smoothstreaming", version.ref = "media3" }
+media3-okhttp = { module = "androidx.media3:media3-datasource-okhttp", version.ref = "media3" }
+media3-cast = { module = "androidx.media3:media3-cast", version.ref = "media3" }
+
+# Kotlin
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+# Network
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
+# Security
+security-crypto = { module = "androidx.security:security-crypto-ktx", version.ref = "securityCrypto" }
+
+# Dokka
+dokka-android = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokka" }
+dokka-kotlin = { module = "org.jetbrains.dokka:kotlin-as-java-plugin", version.ref = "dokka" }
+
+# DoveRunner SDK
+
+# Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-test-ext = { module = "androidx.test.ext:junit", version.ref = "ext-junit" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "core-testing" }
+mock-webserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mock-webserver" }
+mock-core = { module = "org.mockito:mockito-core", version.ref = "mock-core"}
+mock-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mock-kotlin"}
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+play-services-tasks = { group = "com.google.android.gms", name = "play-services-tasks", version.ref = "playServicesTasks" }

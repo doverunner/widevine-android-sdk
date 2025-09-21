@@ -19,6 +19,7 @@ import com.doverunner.widevine.model.WvCallback
 import com.doverunner.widevine.model.DrmConfigration
 import com.doverunner.widevine.model.WvEventListener
 import com.doverunner.widevine.sdk.DrWvSDK
+import com.google.common.io.ByteStreams
 import kotlinx.coroutines.*
 import java.io.File
 import java.net.HttpURLConnection
@@ -177,7 +178,7 @@ class MainActivity : AppCompatActivity() {
                 it.write(keyData, 0, keyData.size)
             }
 
-            return Util.toByteArray(conn.inputStream)
+            return ByteStreams.toByteArray(conn.inputStream)
         }
     }
 

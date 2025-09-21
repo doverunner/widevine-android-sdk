@@ -20,7 +20,6 @@ import com.doverunner.widevine.model.DownloadState
 import com.doverunner.widevine.sdk.DrWvSDK
 
 @UnstableApi
-@OptIn(UnstableApi::class)
 class PlayerActivity : CastStateListener, AppCompatActivity() {
 
     private lateinit var binding: ActivityPlayerBinding
@@ -66,12 +65,24 @@ class PlayerActivity : CastStateListener, AppCompatActivity() {
     }
 
     private fun buildSample() {
+
         if (intent.hasExtra(CONTENT) && wvSDK == null) {
-            var content: ContentData? = intent.getParcelableExtra(CONTENT)
-            if (content != null && content!!.url != null) {
+            val content: ContentData? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                // Android 13 (TIRAMISU) 이상에서는 Class 타입을 명시합니다.
+                intent.getParcelableExtra(CONTENT, ContentData::class.java)
+            } else {
+                // 이전 버전에서는 기존 deprecated 메서드를 사용하고 경고를 억제합니다.
+                @Suppress("DEPRECATION")
+                intent.getParcelableExtra(CONTENT)
+            }
+
+            // content가 null이 아니고 content.url도 null이 아닌 경우 DrWvSDK를 초기화합니다.
+            // content!! 대신 null 체크 후 안전하게 접근하는 것이 좋습니다.
+            if (content != null && content.url != null) {
+                // wvSDK 변수에 DrWvSDK 객체 할당
                 wvSDK = DrWvSDK.createWvSDK(
                     this,
-                    content!!
+                    content
                 )
             }
         }

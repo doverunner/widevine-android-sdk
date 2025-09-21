@@ -1,0 +1,204 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.doverunner",
+    "module": "widevine",
+    "version": "4.5.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.13"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "widevine-4.5.0.aar",
+          "url": "widevine-4.5.0.aar",
+          "size": 225752,
+          "sha512": "f3509ee46edd84048bb460222d02b653aea00c680c0a59b74f49128b3a56e83656272f478c8ffa2b5c5fef77171e5a755e328740e2e132aad8e9f0753dc0be31",
+          "sha256": "c24d17b466f467c8b9ecc0ca47a93992398d618671bba82179f526a093bf2098",
+          "sha1": "64f6740411bd69f45d470956b86ada74f2e8572a",
+          "md5": "831218fbba56f76fef44b5264940241e"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "2.2.10"
+          }
+        },
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-tasks",
+          "version": {
+            "requires": "18.3.2"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.17.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.1"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.13.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "androidx.datastore",
+          "module": "datastore-preferences",
+          "version": {
+            "requires": "1.1.7"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-dash",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-hls",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-rtsp",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-exoplayer-smoothstreaming",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource-okhttp",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.13.1"
+          }
+        },
+        {
+          "group": "androidx.security",
+          "module": "security-crypto-ktx",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "widevine-4.5.0.aar",
+          "url": "widevine-4.5.0.aar",
+          "size": 225752,
+          "sha512": "f3509ee46edd84048bb460222d02b653aea00c680c0a59b74f49128b3a56e83656272f478c8ffa2b5c5fef77171e5a755e328740e2e132aad8e9f0753dc0be31",
+          "sha256": "c24d17b466f467c8b9ecc0ca47a93992398d618671bba82179f526a093bf2098",
+          "sha1": "64f6740411bd69f45d470956b86ada74f2e8572a",
+          "md5": "831218fbba56f76fef44b5264940241e"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "widevine-4.5.0-sources.jar",
+          "url": "widevine-4.5.0-sources.jar",
+          "size": 182803,
+          "sha512": "30176335c84bcdb6ce0f5216bc7e70d0af38904328f0fa16ba006f438dd59f18121064e761755c3f85898d5390102cb832df22ca83e8dc97b6958cde77c55488",
+          "sha256": "94d23dfcc704cc881bf47e1cdb76b77db6de710b4d8648b6ac971b24df76c185",
+          "sha1": "9ab3b80563524a76ca857a09b623edd7c4e50e14",
+          "md5": "f8af265851273d1a3bc9c1170211157d"
+        }
+      ]
+    }
+  ]
+}
