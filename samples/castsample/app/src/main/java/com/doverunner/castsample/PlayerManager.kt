@@ -45,7 +45,6 @@ import com.doverunner.widevine.model.ContentData
  * Manages players and an internal media queue for the demo app.
  *
  */
-@UnstableApi @OptIn(UnstableApi::class)
 internal class PlayerManager(
     context: Context,
     listener: Listener,
@@ -137,7 +136,7 @@ internal class PlayerManager(
     }
 
     fun addItem(content: ContentData) {
-        if (content != null && content.url != null) {
+        content.url?.let {
             wvSDK = DrWvSDK.createWvSDK(
                 context,
                 content

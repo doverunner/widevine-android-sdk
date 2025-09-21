@@ -1,1 +1,1 @@
-sourceset_dependencies='{":widevine:dokkaHtml/debug":[],":widevine:dokkaHtml/main":[],":widevine:dokkaHtml/release":[]}'
+sourceset_dependencies='{":widevine/debug":[],":widevine/main":[],":widevine/release":[]}'

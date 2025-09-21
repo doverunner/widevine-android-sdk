@@ -3,8 +3,12 @@ package com.doverunner.advencedsample
 import android.os.Build
 import android.os.Bundle
 import android.view.SurfaceView
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.media3.common.C
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
@@ -45,90 +49,84 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun initializePlayer() {
-        var content: ContentData? = null
-        var mediaSource: MediaSource? = null
         try {
-            if (intent.hasExtra(CONTENT) && wvSDK == null) {
-                content = intent.getParcelableExtra(CONTENT)
-                if (content != null && content!!.url != null) {
-                    wvSDK = DrWvSDK.createWvSDK(
-                        this,
-                        content!!
-                    )
-                }
-            }
+            // Step 1: get ContentData from Intent
+            val content = getContentFromIntent() ?: return showError("No content data")
 
-            // mediaItem = wvSDK?.getMediaItem()
-            wvSDK?.getMediaSource()?.let { media ->
-                mediaSource = media
-                val drmConfiguration = media.mediaItem.localConfiguration?.drmConfiguration
-                if (drmConfiguration != null &&
-                    drmConfiguration.scheme != C.CLEARKEY_UUID) {
-                    wvSDK?.getDrmInformation()?.let {
-                        if ((it.licenseDuration <= 0 || it.playbackDuration <= 0) &&
-                            wvSDK?.getDownloadState() == DownloadState.COMPLETED) {
-                            Toast.makeText(applicationContext, "Expired license", Toast.LENGTH_LONG)
-                                .show()
-                        }
-                    }
-                }
-            }
+            // Step 2: DRM SDK initialization
+            wvSDK = DrWvSDK.createWvSDK(this, content)
+
+            // Step 3: get MediaSource
+            val mediaSource = wvSDK?.getMediaSource() ?: return showError("No media source")
+
+            // Step 4: check license validity
+            checkLicense()
+
+            // Step 5: player initialization and start playback
+            createAndStartPlayer(mediaSource)
         } catch (e: WvException.DrmException) {
-            print(e)
-            Toast.makeText(applicationContext, "DrmException", Toast.LENGTH_LONG)
-                .show()
+            showError("DrmException")
         } catch (e: WvException.DetectedDeviceTimeModifiedException) {
-            print(e)
-            Toast.makeText(applicationContext, "DeviceTimeModified", Toast.LENGTH_LONG)
-                .show()
+            showError("DeviceTimeModified")
         } catch (e: Exception) {
-            print(e)
-            Toast.makeText(applicationContext, "Exception", Toast.LENGTH_LONG)
-                .show()
+            showError("Failed initialize: ${e.message}")
         }
+    }
 
+    private fun getContentFromIntent(): ContentData? {
+        if (!intent.hasExtra(CONTENT)) return null
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(CONTENT, ContentData::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(CONTENT)
+        }
+    }
+
+    private fun checkLicense() {
+        val drmInfo = wvSDK?.getDrmInformation()
+        val isDownloadCompleted = wvSDK?.getDownloadState() == DownloadState.COMPLETED
+
+        if (isDownloadCompleted && drmInfo != null) {
+            val isExpired = drmInfo.licenseDuration <= 0 ||
+                    drmInfo.playbackDuration <= 0
+
+            if (isExpired) {
+                showError("Expired license")
+            }
+        }
+    }
+
+    private fun createAndStartPlayer(mediaSource: MediaSource) {
         // using mediaItem
         /*
          ExoPlayer.Builer(this).setMediaSourceFactory(
                 DefaultMediaSourceFactory(this)
                 setDataSourceFactory(wvSDK!!.getDataSourceFactory())).build()
         */
+        exoPlayer = ExoPlayer.Builder(this).build().apply {
+            binding.exoplayerView.player = this
+            setMediaSource(mediaSource)
+            prepare()
+            playWhenReady = true
 
-        if (mediaSource == null) {
-            return
-        }
-
-        ExoPlayer.Builder(this)
-//            .setRenderersFactory(DefaultRenderersFactory(this)
-//                .setEnableDecoderFallback(true))
-            .build()
-            .also { player ->
-                exoPlayer = player
-                binding.exoplayerView.player = player
-//                exoPlayer?.setVideoSurfaceView(binding.surfaceView)
-//                exoPlayer?.setVideoSurface(binding.surfaceView.holder.surface)
-                exoPlayer?.setMediaSource(mediaSource!!)
-                exoPlayer?.prepare()
-                exoPlayer?.playWhenReady = true
-                exoPlayer?.addListener(object : Player.Listener {
-                    override fun onPlayerError(error: PlaybackException) {
-                        super.onPlayerError(error)
-                        if (error.errorCode ==
+            // 간단한 에러 처리
+            addListener(object : Player.Listener {
+                override fun onPlayerError(error: PlaybackException) {
+                    if (error.errorCode ==
                             PlaybackException.ERROR_CODE_DRM_LICENSE_EXPIRED) {
-                            Toast.makeText(applicationContext, "License Expired", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
-                        }
+                        showError("License Expired")
+                    } else {
+                        showError("Player Error: ${error.message}")
                     }
+                }
+            })
+        }
+    }
 
-                    override fun onIsPlayingChanged(isPlaying: Boolean) {
-                        super.onIsPlayingChanged(isPlaying)
-                        if (isPlaying && exoPlayer != null) {
-//                            viewModel.setDuration(exoPlayer!!.duration)
-                        }
-                    }
-                })
-            }
+    private fun showError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun onStart() {
