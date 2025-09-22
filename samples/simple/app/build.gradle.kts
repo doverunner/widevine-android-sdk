@@ -42,7 +42,8 @@ dependencies {
     implementation("com.doverunner:widevine:4.5.0")
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
-implementation(libs.androidx.core.ktx)
+
+    implementation(libs.androidx.core.ktx)
     implementation(libs.material)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.androidx.appcompat)
