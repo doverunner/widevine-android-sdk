@@ -1,7 +1,6 @@
 package com.doverunner.advencedsample
 
 import android.content.Context
-import android.util.Log
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import androidx.media3.exoplayer.upstream.CmcdConfiguration
