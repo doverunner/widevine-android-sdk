@@ -12,31 +12,29 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-}
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-}
+    }
     kotlin {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-}
- 
-}
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-}
- 
-}
+        }
+    }
 }
 
 dependencies {
     implementation("com.doverunner:widevine:4.5.0")
     // implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     // implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
-    
+
     implementation(libs.androidx.leanback)
     implementation(libs.glide)
     implementation(libs.androidx.core.ktx)

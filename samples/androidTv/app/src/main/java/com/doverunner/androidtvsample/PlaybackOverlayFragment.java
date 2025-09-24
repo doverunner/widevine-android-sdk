@@ -436,7 +436,7 @@ public class PlaybackOverlayFragment extends androidx.leanback.app.PlaybackFragm
 		protected void onBindDescription(ViewHolder viewHolder, Object item) {
 			viewHolder.getTitle().setText(((Movie) item).name);
 			// TODO : Studio Informatin can be set in the MovieList.
-			viewHolder.getSubtitle().setText("INKA Studio");
+			viewHolder.getSubtitle().setText("DoveRunner");
 		}
 	}
 }
