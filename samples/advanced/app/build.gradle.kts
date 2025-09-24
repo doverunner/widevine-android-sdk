@@ -15,27 +15,25 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-}
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-}
- 
-}
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-}
+    }
     kotlin {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-}
- 
-}
+        }
+    }
     buildFeatures {
         viewBinding = true
-}
+    }
 }
 
 dependencies {
@@ -43,6 +41,8 @@ dependencies {
     // implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     // implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
 
+
+    implementation(project(":cmcd"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)

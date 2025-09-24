@@ -21,36 +21,32 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
-}
- 
-}
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-}
- 
-}
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-}
+    }
     kotlin {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-}
- 
-}
+        }
+    }
     buildFeatures {
         compose = true
-}
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeKotlinCompiler.toString()
-}
+    }
     fun Packaging.() {
-        resources.excludes.add("/META-INF/{AL2.0,LGPL2.1
-}")
-}
+        resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+    }
 }
 
 dependencies {
