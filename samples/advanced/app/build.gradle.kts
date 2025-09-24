@@ -69,6 +69,9 @@ dependencies {
     // Secure
     implementation(libs.security.crypto)
 
+    // DataStore
+    implementation(libs.androidx.datastore)
+
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)

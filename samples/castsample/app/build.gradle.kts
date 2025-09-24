@@ -64,6 +64,9 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.security.crypto)
 
+    // DataStore
+    implementation(libs.androidx.datastore)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.espresso.core)
