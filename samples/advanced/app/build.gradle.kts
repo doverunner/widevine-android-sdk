@@ -42,8 +42,6 @@ dependencies {
     // implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
 
 
-    implementation(project(":cmcd"))
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
     implementation(libs.androidx.appcompat)
