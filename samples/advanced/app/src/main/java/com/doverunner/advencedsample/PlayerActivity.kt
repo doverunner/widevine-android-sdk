@@ -59,6 +59,8 @@ class PlayerActivity : AppCompatActivity() {
 
             // Step 5: player initialization and start playback
             createAndStartPlayer(mediaSource)
+
+            wvSDK?.setPlayer(exoPlayer as Player)
         } catch (e: WvException.DrmException) {
             showError("DrmException")
         } catch (e: WvException.DetectedDeviceTimeModifiedException) {
