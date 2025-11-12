@@ -59,7 +59,7 @@ glide = "5.0.4"
 nexus-publish-plugin = "2.0.0"
 
 # Dokka
-dokka = "2.0.0"
+dokka = "2.1.0"
 
 # Testing
 junit = "4.13.2"
