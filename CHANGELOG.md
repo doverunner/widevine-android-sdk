@@ -1,22 +1,29 @@
+# Version 4.5.1
+- **What’s new**
+  - The `mimeType` in `ContentData` class parameter has been added
+    - the parameter can enforce the MIME type for media content.
+
 # Version 4.5.0
 
-- **Updated minimum Android version:**
-  - Minimum supported Android version: Updated to `6.0.0`
-  - Minimum API level: Updated to `23` 
-- **Updated JVM:**
-  - jvmTarget: Updated to `17`
-- **Updated Libraries:**
-  - media3: Updated to `1.8.0`
-- **The Groovy DSL has been migrated to Kotlin DSL.**
-  - 'build.gradle' has been changed to 'build.gradle.kts'
-- **The samples have been changed to a version control system using TOML.**
-  - add 'libs.versions.toml' in gradle directory for samples
-- **ContentData class modifications:**
-  - The `localFileUrl` parameter has been added.
-    - the parameters for playing content downloaded in version 2.x.x.
-- **DrmConfigration class modifications:**
-  - The `authData` parameter has been added. 
-    - `authData` is now used instead of `token` or `customData`.
+- **What’s new**
+  - The `localFileUrl` in `ContentData` class parameter has been added
+    - the parameters for playing content downloaded in version 2.x.x
+- **What’s changed**
+  - Updated minimum Android version
+    - Minimum supported Android version: Updated to `6.0.0`
+    - Minimum API level: Updated to `23`
+  - Updated JVM
+    - jvmTarget: Updated to `17`
+  - Updated Libraries
+    - media3: Updated to `1.8.0`
+  - The Groovy DSL has been migrated to Kotlin DSL
+    - `build.gradle` has been changed to `build.gradle.kts`
+  - The samples have been changed to a version control system using TOML
+    - add `libs.versions.toml` in gradle directory for samples
+  - DrmConfigration class modifications
+    - `authData` is now used instead of `token` or `customData`
+- **What’s changed**
+  - None
 
 # Version 4.4.0
 
