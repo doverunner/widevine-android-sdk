@@ -436,7 +436,7 @@ override fun onResume() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }, onFailed = { e ->
-                                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT)
+                                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT)
                                     .show()
                                 print(e.msg)
                             })
@@ -481,14 +481,14 @@ override fun onResume() {
                     }
                     9 -> {
                         wvSDK.reProvisionRequest({}, { e ->
-                            print(e.message())
+                            print(e.message)
                         })
                     }
                 }
             } catch (e: WvException.DrmException) {
-                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: WvLicenseServerException) {
-                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
         builder.setNegativeButton("Cancel", null)
