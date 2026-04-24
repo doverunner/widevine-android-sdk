@@ -24,7 +24,7 @@ class OptionFragment() : Fragment() {
                 TrackSelectUtil.tracks.video[n].isDownload = index == n
             }
         }
-        adapter.datalist = TrackSelectUtil.tracks.video
+        adapter?.datalist = TrackSelectUtil.tracks.video
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 

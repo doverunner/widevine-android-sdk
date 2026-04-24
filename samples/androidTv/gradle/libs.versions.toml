@@ -1,6 +1,7 @@
 [versions]
 # DoveRunner
-
+drWvSDK = "4.5.1"
+licenseCipher = "1.5.0"
 cmcd = "1.0.0"
 
 # Build
@@ -59,7 +60,7 @@ glide = "5.0.4"
 nexus-publish-plugin = "2.0.0"
 
 # Dokka
-dokka = "2.1.0"
+dokka = "2.0.0"
 
 # Testing
 junit = "4.13.2"
@@ -156,6 +157,7 @@ dokka-android = { module = "org.jetbrains.dokka:android-documentation-plugin", v
 dokka-kotlin = { module = "org.jetbrains.dokka:kotlin-as-java-plugin", version.ref = "dokka" }
 
 # DoveRunner SDK
+doverunner-widevine = { module = "com.doverunner:widevine", version.ref = "drWvSDK" }
 
 # Testing
 junit = { module = "junit:junit", version.ref = "junit" }

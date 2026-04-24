@@ -25,24 +25,11 @@ class TrackPagerAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        var currentPos = 0
-
-        if (TrackSelectUtil.tracks.video.isNotEmpty()) {
-            if (position == currentPos) return OptionFragment()
-            currentPos++
+        when (position) {
+            1 -> return CheckFragment(true) // audio
+            2 -> return CheckFragment(false) // text
+            else -> return OptionFragment() // video
         }
-
-        if (TrackSelectUtil.tracks.audio.isNotEmpty()) {
-            if (position == currentPos) return CheckFragment(true)
-            currentPos++
-        }
-
-        if (TrackSelectUtil.tracks.text.isNotEmpty()) {
-            if (position == currentPos) return CheckFragment(false)
-            currentPos++
-        }
-
-        return OptionFragment()
     }
 
 }
