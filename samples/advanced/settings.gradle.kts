@@ -11,6 +11,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
 //        maven {
 //            name = "GitHubPackages"
 //            url = uri("https://maven.pkg.github.com/doverunner/widevine-android-sdk")
@@ -18,7 +19,6 @@ dependencyResolutionManagement {
 //                username = "GitHub ID"
 //                password = "GitHub Access Token"
 //            }
-//
 //        }
     }
 }
