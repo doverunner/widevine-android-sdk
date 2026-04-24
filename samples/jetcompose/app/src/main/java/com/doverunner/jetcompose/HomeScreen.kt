@@ -142,7 +142,7 @@ fun ContentListItem(
                                     Toast.LENGTH_LONG
                                 ).show()
                             }, onFailed = { e ->
-                                Toast.makeText(context, "${e.message}", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "${e.message()}", Toast.LENGTH_LONG).show()
                                 print(e.msg)
                             })
                         }
@@ -152,7 +152,7 @@ fun ContentListItem(
                         try {
                             wvSDK.renewLicense()
                         } catch (e: WvException.DrmException) {
-                            Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "${e.message()}", Toast.LENGTH_SHORT).show()
                         }
                     }) { Text(text = "renew license") }
 
@@ -160,7 +160,7 @@ fun ContentListItem(
                         try {
                             wvSDK.removeLicense()
                         } catch (e: WvException.DrmException) {
-                            Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "${e.message()}", Toast.LENGTH_SHORT).show()
                         }
                     }) { Text(text = "remove license") }
 
@@ -205,7 +205,7 @@ fun ContentListItem(
 
                     TextButton(onClick = {
                         wvSDK.reProvisionRequest({}, { e ->
-                            print(e.message)
+                            print(e.message())
                         })
                     }) { Text(text = "re-provisioning") }
                 }
