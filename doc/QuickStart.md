@@ -21,34 +21,34 @@ You can add the DoveRunner Widevine SDK to your development project by following
 * The SDK is available on DoveRunner GitHub Packages.
 
 * When using GitHub ID and Git, you will receive a access token to use instead of a password.
-  * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+    * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
 * Modify the github package values in the `settings.gradle` files of the samples.
-  * Add the following code snippet to the `dependencyResolutionManagement` section of your `settings.gradle` file to include the Widevine Android SDK GitHub repository:
+    * Add the following code snippet to the `dependencyResolutionManagement` section of your `settings.gradle` file to include the Widevine Android SDK GitHub repository:
 
-     ```gradle
-         dependencyResolutionManagement {
-             repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-             repositories {
-                 mavenLocal()
-                 google()
-                 mavenCentral()
-                 maven {
-                     url "https://plugins.gradle.org/m2/"
-                 }
-                 // GitHub Packages for Widevine SDK
-                 maven {
-                     name = "GitHubPackages"
-                     url = uri("https://maven.pkg.github.com/doverunner/widevine-android-sdk")
-                     credentials {
-                         username = "Git hub ID"
-                         password = "password"
-                     }
-                 }
-             }
-         }
-     ```
-   
+       ```gradle
+           dependencyResolutionManagement {
+               repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+               repositories {
+                   mavenLocal()
+                   google()
+                   mavenCentral()
+                   maven {
+                       url "https://plugins.gradle.org/m2/"
+                   }
+                   // GitHub Packages for Widevine SDK
+                   maven {
+                       name = "GitHubPackages"
+                       url = uri("https://maven.pkg.github.com/doverunner/widevine-android-sdk")
+                       credentials {
+                           username = "Git hub ID"
+                           password = "password"
+                       }
+                   }
+               }
+           }
+       ```
+
 * Apply the below configuration in build.gradle (app).
    ```gradle
    plugins {
@@ -97,157 +97,167 @@ You can add the DoveRunner Widevine SDK to your development project by following
         implementation "androidx.security:security-crypto-ktx:1.1.0"
    }
    ```
-   
+
 * Implement WvEventListener in MainActivity. (Please refer to sample project)
 ```kotlin
 	val wvEventListener: WvEventListener = object : WvEventListener {
-	    override fun onCompleted(contentData: ContentData) {
-	        // Called when download is complete: Please refer to the API Guide.
-	    }
-	
-	    override fun onProgress(contentData: ContentData, percent: Float, downloadedBytes: Long) {
-	        // Call from start to end of download: Please refer to the API Guide.
-	    }
-	
-	    override fun onStopped(contentData: ContentData) {
-	        // Called when download is stopped: Refer to the API Guide.
-	    }
-	
-	    override fun onRestarting(contentData: ContentData) {
-	        // Called when download is restarting: Refer to the API Guide.
-	    }
-	
-	    override fun onRemoved(contentData: ContentData) {
-	        // Called when downloaded content is removed: Refer to the API Guide.
-	    }
-	
-	    override fun onPaused(contentData: ContentData) {
-	        // Called when download is pause: Refer to the API Guide.
-	    }
-	
-	    override fun onFailed(contentData: ContentData, e: WvException?) {
-	        // Called when an error occurs while downloading content or an error occurs in the license: Refer to the API Guide.
-	    }
-	
-	    override fun onFailed(contentData: ContentData, e: WvLicenseServerException?) {
-	        // Called when error sent from server when acquiring license: Refer to the API Guide.
-	    }
-	}
+    override fun onCompleted(contentData: ContentData) {
+        // Called when download is complete: Please refer to the API Guide.
+    }
+
+    override fun onProgress(contentData: ContentData, percent: Float, downloadedBytes: Long) {
+        // Call from start to end of download: Please refer to the API Guide.
+    }
+
+    override fun onStopped(contentData: ContentData) {
+        // Called when download is stopped: Refer to the API Guide.
+    }
+
+    override fun onRestarting(contentData: ContentData) {
+        // Called when download is restarting: Refer to the API Guide.
+    }
+
+    override fun onRemoved(contentData: ContentData) {
+        // Called when downloaded content is removed: Refer to the API Guide.
+    }
+
+    override fun onPaused(contentData: ContentData) {
+        // Called when download is pause: Refer to the API Guide.
+    }
+
+    override fun onFailed(contentData: ContentData, e: WvException?) {
+        // Called when an error occurs while downloading content or an error occurs in the license: Refer to the API Guide.
+    }
+
+    override fun onFailed(contentData: ContentData, e: WvLicenseServerException?) {
+        // Called when error sent from server when acquiring license: Refer to the API Guide.
+    }
+}
 ```
-   
+
 * Create a DrWvSDK object with content information to download. Set the Site ID verified in the DoveRunner Admin Site. (Please refer to sample project)
 
-	```kotlin
-	// Enter DRM related information.
-	val config = DrmConfigration(
-	    "site id",
- 		"site key", // Set to an empty string if you don't know 
-	    "content token",
- 		"custom data",
- 		mutableMapOf(), // custom header
- 		"cookie",
- 		"licenseCipherPath", // Set to true if you want to communicate with the server using the DoveRunner License Cipher feature.
-  		"drmLicenseUrl", // Set to license server URL if you have one
-        "uuid" // Set to an empty string if you don't know
-	)
-	
-    // localFileUrl: content URLs obtained from SDK 2.x.x or stored in external storage
-    // If the contentName used during download in version 2.x.x is TestRunner_User, you must set the URL as follows:
-    // var file = File(context.getExternalFilesDir(null), "TestRunner_User/stream.mpd")
-    // val localUrl = "file://${file.absolutePath}"
-    // localFileUrl = localUrl
-	val data = ContentData(
-	    contentId = "content id",
-	    url = "content URL",
-	    localFileUrl = "content URLs obtained from SDK 2.x.x or stored in external storage",
-	    drmConfig = config,
-	    cookie = null,
-        httpHeaders = null
-	)
-	
-	val wvSDK = DrWvSDK.createWvSDK(
-	    Context, // Context
-	    data
-	)
-	
-	DrWvSDK.addWvEventListener(wvEventListener)
-	```
+  ```kotlin
+  // Enter DRM related information.
+  val config = DrmConfigration(
+      "site id",
+       "site key", // Set to an empty string if you don't know 
+      "content token",
+       "custom data",
+       mutableMapOf(), // custom header
+       "cookie",
+       "licenseCipherPath", // Set to true if you want to communicate with the server using the DoveRunner License Cipher feature.
+        "drmLicenseUrl", // Set to license server URL if you have one
+      "uuid" // Set to an empty string if you don't know
+  )
+  
+  // localFileUrl: content URLs obtained from SDK 2.x.x or stored in external storage
+  // If the contentName used during download in version 2.x.x is TestRunner_User, you must set the URL as follows:
+  // var file = File(context.getExternalFilesDir(null), "TestRunner_User/stream.mpd")
+  // val localUrl = "file://${file.absolutePath}"
+  // localFileUrl = localUrl
+  val data = ContentData(
+      contentId = "content id",
+      url = "content URL",
+      localFileUrl = "content URLs obtained from SDK 2.x.x or stored in external storage",
+      drmConfig = config,
+      cookie = null,
+      httpHeaders = null
+  )
+  
+  val wvSDK = DrWvSDK.createWvSDK(
+      Context, // Context
+      data
+  )
+  
+  DrWvSDK.addWvEventListener(wvEventListener)
+  ```
 
 * Get the track information of the content to be downloaded. (Please refer to sample project)
 
-	```kotlin
-	// The device must be connected to a network.
-	// When track information is acquired, the license is also automatically downloaded.
-	val trackInfo = wvSDK.getContentTrackInfo()
-	```
+  ```kotlin
+  // The device must be connected to a network.
+  // When track information is acquired, the license is also automatically downloaded.
+  val trackInfo = wvSDK.getContentTrackInfo()
+  ```
 
 * Select the track you want to download from the track information. (Please refer to sample project)
 
-	```kotlin
-	// In our sample, we use TrackSelectDialog to select.
-	trackInfo.video[0].isDownload = true
-	trackInfo.audio[0].isDownload = true
-	```
+  ```kotlin
+  // In our sample, we use TrackSelectDialog to select.
+  trackInfo.video[0].isDownload = true
+  trackInfo.audio[0].isDownload = true
+  ```
 
 * Execute the download after checking if the content has already been downloaded. (Please refer to sample project)
 
-	```kotlin
-	val state = wvSDK.getDownloadState()
-	if (state != COMPLETED) {
-	    wvSDK.download(trackInfo)
-	}
-	```
+  ```kotlin
+  val state = wvSDK.getDownloadState()
+  if (state != COMPLETED) {
+      wvSDK.download(trackInfo)
+  }
+  ```
 
 * To play downloaded content, obtain a MediaItem or MediaSource using the following API. (Please refer to sample project)
 
-	```kotlin
-	// use MediaSource or MediaItem
-	val mediaSource = wvSDK.getMediaSource()
-	val mediaItem = wvSDK.getMediaItem()
-	```
+  ```kotlin
+  // use MediaSource or MediaItem
+  val mediaSource = wvSDK.getMediaSource()
+  val mediaItem = wvSDK.getMediaItem()
+  ```
 
 * Implement player in PlayerActivity.java using the below development guide.
-    http://google.github.io/ExoPlayer/guide.html
+  http://google.github.io/ExoPlayer/guide.html
 > Please refer to the below guide from Google for more information about Exoplayer.
 > https://developer.android.com/guide/topics/media/exoplayer.html
 
 * Obtain license duration and playback duration of DRM license.
 
-	```kotlin
-	val drmInfo = wvSDK.getDrmInformation()
-	val licenseDuration = drmInfo.licenseDuration
-	val playbackDuration = drmInfo.playbackDuration
-	
-	if (licenseDuration <= 0 || playbackDuration <= 0) {
-	    // DRM License Expired
-	}
-	```
+  ```kotlin
+  val drmInfo = wvSDK.getDrmInformation()
+  val licenseDuration = drmInfo.licenseDuration
+  val playbackDuration = drmInfo.playbackDuration
+  
+  if (licenseDuration <= 0 || playbackDuration <= 0) {
+      // DRM License Expired
+  }
+  ```
 
-* Set up ExoPlayer as follows. (Please refer to sample project) 
+* Set up ExoPlayer as follows. (Please refer to sample project)
 
-	```kotlin
-	ExoPlayer.Builder(this).build()
-	    .also { player ->
-	        exoPlayer = player
-	        binding.exoplayerView.player = player
-	        exoPlayer?.setMediaSource(mediaSource) //use mediaSource.
-	        exoPlayer?.addListener(object : Player.Listener {
-	            override fun onPlayerError(error: PlaybackException) {
-	                super.onPlayerError(error)
-	            }
-	
-	            override fun onIsPlayingChanged(isPlaying: Boolean) {
-	                super.onIsPlayingChanged(isPlaying)
-	            }
-	        })
-	    }
-	```
+  ```kotlin
+  ExoPlayer.Builder(this).build()
+      .also { player ->
+          exoPlayer = player
+          binding.exoplayerView.player = player
+          exoPlayer?.setMediaSource(mediaSource) //use mediaSource.
+          exoPlayer?.addListener(object : Player.Listener {
+              override fun onPlayerError(error: PlaybackException) {
+                  super.onPlayerError(error)
+              }
+  
+              override fun onIsPlayingChanged(isPlaying: Boolean) {
+                  super.onIsPlayingChanged(isPlaying)
+              }
+          })
+      }
+  ```
 
-### **Sign up for download services**
-Register a download service based on your customer's situation.
+### **Download Feature Setup**
+
+> **Note (since SDK 4.5.1):** `FOREGROUND_SERVICE` and `FOREGROUND_SERVICE_DATA_SYNC` permissions have been removed from the SDK's built-in manifest. Apps that use the download feature must declare these permissions in their own `AndroidManifest.xml`. Apps that only use streaming playback do **not** need to add these permissions.
+
+- Add the following permissions to your app's `AndroidManifest.xml` **only if you use the download feature**:
+  ```xml
+  <!-- Required for download feature on Android 9 (API 28) and above -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <!-- Required for download feature on Android 14 (API 34) and above -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+  ```
+
 - To support background notifications for downloads, register your download service as shown below.
   ```kotlin
-   // DemoDownloadService 는 advanced 샘플을 확인해 주세요.
+   // Please refer to the advanced sample for DemoDownloadService.
    wvSDK.setDownloadService(DemoDownloadService::class.java)
    ```
 
@@ -255,6 +265,7 @@ Register a download service based on your customer's situation.
   ```xml
   <service
       android:name="com.doverunner.advencedsample.DemoDownloadService"
+      android:foregroundServiceType="dataSync"
       android:exported="false">
       <intent-filter>
           <action android:name="com.google.android.exoplayer.downloadService.action.RESTART" />
@@ -283,12 +294,12 @@ val format = DashUtil.loadFormatWithDrmInitData(
 
 // The format parameter does not need to be entered unless it is a local file.
 // If the format value is NULL, it is automatically defined inside the SDK via the REMOTE CONTENT URL.
-wvSDK.downloadLicense(format = format, { 
-    Toast.makeText(this@MainActivity, "success download license", Toast.LENGTH_SHORT).show()
-}, { e ->
-    Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
-    print(e.msg)
-})
+            wvSDK.downloadLicense(format = format, {
+        Toast.makeText(this@MainActivity, "success download license", Toast.LENGTH_SHORT).show()
+    }, { e ->
+        Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
+        print(e.msg)
+    })
 ```
 
 **Remove license**

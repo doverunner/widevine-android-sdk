@@ -11,6 +11,7 @@ import androidx.annotation.DoNotInline
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.media3.common.util.Util
 import androidx.media3.exoplayer.upstream.CmcdConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +25,6 @@ import com.doverunner.widevine.model.DownloadState
 import com.doverunner.widevine.model.WvCallback
 import com.doverunner.widevine.model.WvEventListener
 import com.doverunner.widevine.sdk.DrWvSDK
-import com.google.common.io.ByteStreams
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
                 it.write(keyData, 0, keyData.size)
             }
 
-            return ByteStreams.toByteArray(conn.inputStream)
+            return Util.toByteArray(conn.inputStream)
         }
     }
 
@@ -436,7 +436,7 @@ override fun onResume() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }, onFailed = { e ->
-                                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT)
+                                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT)
                                     .show()
                                 print(e.msg)
                             })
@@ -481,14 +481,14 @@ override fun onResume() {
                     }
                     9 -> {
                         wvSDK.reProvisionRequest({}, { e ->
-                            print(e.message)
+                            print(e.message())
                         })
                     }
                 }
             } catch (e: WvException.DrmException) {
-                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
             } catch (e: WvLicenseServerException) {
-                Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
             }
         }
         builder.setNegativeButton("Cancel", null)

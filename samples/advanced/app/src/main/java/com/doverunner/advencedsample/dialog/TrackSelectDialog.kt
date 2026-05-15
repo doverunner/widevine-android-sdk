@@ -14,23 +14,17 @@ class TrackSelectDialog(
     private val onOk: ((DownloaderTracks) -> Unit)?
 ) : DialogFragment() {
     private lateinit var binding: DialogTrackSelectBinding
-    private val tabTitleArray: MutableList<String> = mutableListOf()
+    private val tabTitleArray = arrayOf(
+        "video",
+        "audio",
+        "text"
+    )
 //    var tabLayout: TabLayout? = null
 //    var viewPager: ViewPager2? = null
 //    var pagerAdapter: TrackPagerAdapter? = null
 
     init {
         TrackSelectUtil.tracks = tracks
-        // 실제 존재하는 트랙만 탭에 추가
-        if (tracks.video.isNotEmpty()) {
-            tabTitleArray.add("video")
-        }
-        if (tracks.audio.isNotEmpty()) {
-            tabTitleArray.add("audio")
-        }
-        if (tracks.text.isNotEmpty()) {
-            tabTitleArray.add("text")
-        }
     }
 
     override fun onCreateView(

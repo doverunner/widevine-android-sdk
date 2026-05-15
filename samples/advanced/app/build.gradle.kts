@@ -37,10 +37,13 @@ android {
 }
 
 dependencies {
-    implementation("com.doverunner:widevine:4.5.1")
     // implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     // implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
 
+    implementation(libs.doverunner.widevine)
+//    implementation(libs.doverunner.drdlc)
+//    implementation(project(":widevine"))
+//    implementation(project(":drdlc"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
@@ -68,9 +71,6 @@ dependencies {
 
     // Secure
     implementation(libs.security.crypto)
-
-    // DataStore
-    implementation(libs.androidx.datastore)
 
     // Testing
     testImplementation(libs.junit)

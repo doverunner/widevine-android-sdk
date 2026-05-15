@@ -1,7 +1,22 @@
+# Version 4.5.2
+
+- **What’s changed**
+  - Updated internally to support drdlc(DRMLicenseCipher) v1.6.1.
+
+- **Bug fixes**
+  - Fixed an issue where download failed with a missing permission error on Android 12 or lower due to `FOREGROUND_SERVICE_DATA_SYNC` being checked regard
+
+
 # Version 4.5.1
+
 - **What’s new**
   - The `mimeType` in `ContentData` class parameter has been added
     - the parameter can enforce the MIME type for media content.
+  - Removed `FOREGROUND_SERVICE` and `FOREGROUND_SERVICE_DATA_SYNC` permissions from the SDK’s `AndroidManifest.xml`
+    - These permissions were previously declared inside the SDK AAR and automatically merged into the host app’s manifest via Android Manifest Merger, causing Google Play review rejections for apps that do not use the download feature.
+    - Starting from this version, apps that use the download feature must declare these permissions explicitly in their own `AndroidManifest.xml`.
+    - Apps that do **not** use the download feature are not affected and do not need to declare these permissions.
+    - See the **Download Feature Setup** section in the QuickStart guide for details.
 
 # Version 4.5.0
 
@@ -22,15 +37,13 @@
     - add `libs.versions.toml` in gradle directory for samples
   - DrmConfigration class modifications
     - `authData` is now used instead of `token` or `customData`
-- **What’s changed**
-  - None
-
+  
 # Version 4.4.0
 
 - **Changed The product brand name will be changed to DoveRunner:**
   - DoveRunner(Dr) is the new name for PallyCon.
-  - We are changing the names of various products related to the existing PallyCon content security service to DoveRunner(Dr).
-  - During this time, some documents and code on the Docs site may use PallyCon and DoveRunner(Dr) interchangeably.
+  - We are changing the names of various products related to the existing PallyCon content security service to DOVERUNNER(Dr).
+  - During this time, some documents and code on the Docs site may use PallyCon and DOVERUNNER(Dr) interchangeably.
   - The group name for the sdk has been changed to `com.doverunner.widevine`.
   - The class name of the sdk has been changed from `PallyConWvSDK` to `DrWvSDK`.
   - The class name of the `PallyConDrmConfigration` has been changed to `DrmConfigration`.
