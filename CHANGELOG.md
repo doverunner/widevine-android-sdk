@@ -1,4 +1,14 @@
+# Version 4.5.2
+
+- **What’s changed**
+  - Updated internally to support drdlc(DRMLicenseCipher) v1.6.1.
+
+- **Bug fixes**
+  - Fixed an issue where download failed with a missing permission error on Android 12 or lower due to `FOREGROUND_SERVICE_DATA_SYNC` being checked regard
+
+
 # Version 4.5.1
+
 - **What’s new**
   - The `mimeType` in `ContentData` class parameter has been added
     - the parameter can enforce the MIME type for media content.
@@ -27,8 +37,6 @@
     - add `libs.versions.toml` in gradle directory for samples
   - DrmConfigration class modifications
     - `authData` is now used instead of `token` or `customData`
-- **What’s changed**
-  - None
   
 # Version 4.4.0
 

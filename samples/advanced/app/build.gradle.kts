@@ -41,6 +41,7 @@ dependencies {
     // implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "libs")))
 
     implementation(libs.doverunner.widevine)
+//    implementation(libs.doverunner.drdlc)
 //    implementation(project(":widevine"))
 //    implementation(project(":drdlc"))
 

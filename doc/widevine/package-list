@@ -8,7 +8,7 @@ $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/CmcdManager/#/PointingT
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/attach/#androidx.media3.common.Player/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/attach.html
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/createObject/#android.content.Context/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/create-object.html
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/flushOnce/#/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/flush-once.html
-$dokka.location:com.doverunner.widevine.cmcd/CmcdManager/record/#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/record.html
+$dokka.location:com.doverunner.widevine.cmcd/CmcdManager/record/#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/record.html
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/setAuthData/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/set-auth-data.html
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/setContentId/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/set-content-id.html
 $dokka.location:com.doverunner.widevine.cmcd/CmcdManager/setVersion/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.cmcd/-cmcd-manager/set-version.html
@@ -122,21 +122,18 @@ $dokka.location:com.doverunner.widevine.model/ContentData.Builder/build/#/Pointi
 $dokka.location:com.doverunner.widevine.model/ContentData.Builder/setContentId/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-builder/set-content-id.html
 $dokka.location:com.doverunner.widevine.model/ContentData.Builder/setCookie/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-builder/set-cookie.html
 $dokka.location:com.doverunner.widevine.model/ContentData.Builder/setHttpHeaders/#kotlin.collections.Map[kotlin.String?,kotlin.String?]?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-builder/set-http-headers.html
-$dokka.location:com.doverunner.widevine.model/ContentData.Builder/setLocalFileUrl/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-builder/set-local-file-url.html
 $dokka.location:com.doverunner.widevine.model/ContentData///PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/index.html
 $dokka.location:com.doverunner.widevine.model/ContentData/ContentData/#kotlin.String#com.doverunner.widevine.model.DrmConfigration/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-content-data.html
-$dokka.location:com.doverunner.widevine.model/ContentData/ContentData/#kotlin.String?#kotlin.String?#kotlin.String?#com.doverunner.widevine.model.DrmConfigration?#kotlin.String?#kotlin.collections.MutableMap[kotlin.String?,kotlin.String?]?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-content-data.html
+$dokka.location:com.doverunner.widevine.model/ContentData/ContentData/#kotlin.String?#kotlin.String?#com.doverunner.widevine.model.DrmConfigration?#kotlin.String?#kotlin.collections.MutableMap[kotlin.String?,kotlin.String?]?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/-content-data.html
 $dokka.location:com.doverunner.widevine.model/ContentData/getContentId/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-content-id.html
 $dokka.location:com.doverunner.widevine.model/ContentData/getCookie/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-cookie.html
 $dokka.location:com.doverunner.widevine.model/ContentData/getDrmConfig/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-drm-config.html
 $dokka.location:com.doverunner.widevine.model/ContentData/getHttpHeaders/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-http-headers.html
-$dokka.location:com.doverunner.widevine.model/ContentData/getLocalFileUrl/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-local-file-url.html
 $dokka.location:com.doverunner.widevine.model/ContentData/getUrl/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/get-url.html
 $dokka.location:com.doverunner.widevine.model/ContentData/setContentId/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-content-id.html
 $dokka.location:com.doverunner.widevine.model/ContentData/setCookie/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-cookie.html
 $dokka.location:com.doverunner.widevine.model/ContentData/setDrmConfig/#com.doverunner.widevine.model.DrmConfigration?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-drm-config.html
 $dokka.location:com.doverunner.widevine.model/ContentData/setHttpHeaders/#kotlin.collections.MutableMap[kotlin.String?,kotlin.String?]?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-http-headers.html
-$dokka.location:com.doverunner.widevine.model/ContentData/setLocalFileUrl/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-local-file-url.html
 $dokka.location:com.doverunner.widevine.model/ContentData/setUrl/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-content-data/set-url.html
 $dokka.location:com.doverunner.widevine.model/DeviceInfo///PointingToDeclaration/widevine/com.doverunner.widevine.model/-device-info/index.html
 $dokka.location:com.doverunner.widevine.model/DeviceInfo/DeviceInfo/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.Boolean/PointingToDeclaration/widevine/com.doverunner.widevine.model/-device-info/-device-info.html
@@ -163,7 +160,6 @@ $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/DrmConfigr
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/DrmConfigration.Builder/#kotlin.String#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/-drm-configration.-builder.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/addHttpHeader/#kotlin.String?#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/add-http-header.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/build/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/build.html
-$dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setAuthData/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/set-auth-data.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setCookie/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/set-cookie.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setCustomData/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/set-custom-data.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setDrmLicenseUrl/#kotlin.String?/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/set-drm-license-url.html
@@ -175,9 +171,8 @@ $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setToken/#
 $dokka.location:com.doverunner.widevine.model/DrmConfigration.Builder/setUuid/#java.util.UUID/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-builder/set-uuid.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration///PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/index.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration/DrmConfigration/#kotlin.String#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-drm-configration.html
-$dokka.location:com.doverunner.widevine.model/DrmConfigration/DrmConfigration/#kotlin.String#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.collections.MutableMap[kotlin.String?,kotlin.String?]?#kotlin.String?#kotlin.String?#kotlin.String#java.util.UUID/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-drm-configration.html
+$dokka.location:com.doverunner.widevine.model/DrmConfigration/DrmConfigration/#kotlin.String#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.collections.MutableMap[kotlin.String?,kotlin.String?]?#kotlin.String?#kotlin.String?#kotlin.String#java.util.UUID/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-drm-configration.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration/DrmConfigration/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/-drm-configration.html
-$dokka.location:com.doverunner.widevine.model/DrmConfigration/getAuthData/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/get-auth-data.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration/getCookie/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/get-cookie.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration/getCustomData/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/get-custom-data.html
 $dokka.location:com.doverunner.widevine.model/DrmConfigration/getDrmLicenseUrl/#/PointingToDeclaration/widevine/com.doverunner.widevine.model/-drm-configration/get-drm-license-url.html
@@ -268,6 +263,7 @@ $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/resumeAll/#/PointingToDeclar
 $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/setDownloadService/#java.lang.Class[androidx.media3.exoplayer.offline.DownloadService?]?#kotlin.Unit?/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/set-download-service.html
 $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/setPallyConCallback/#com.doverunner.widevine.model.WvCallback?#kotlin.Unit?/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/set-pally-con-callback.html
 $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/setPallyConEventListener/#com.doverunner.widevine.model.WvEventListener?/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/set-pally-con-event-listener.html
+$dokka.location:com.doverunner.widevine.sdk/DrWvSDK/setPlayer/#androidx.media3.common.Player/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/set-player.html
 $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/stop/#/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/stop.html
 $dokka.location:com.doverunner.widevine.sdk/DrWvSDK/updateSecure/#kotlin.Function0[kotlin.Unit]#kotlin.Function1[com.doverunner.widevine.exception.WvException,kotlin.Unit]/PointingToDeclaration/widevine/com.doverunner.widevine.sdk/-dr-wv-s-d-k/update-secure.html
 $dokka.location:com.doverunner.widevine.service////PointingToDeclaration/widevine/com.doverunner.widevine.service/index.html
@@ -333,7 +329,7 @@ $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil///PointingToDeclar
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/GlobalObjectUtil/#/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/-global-object-util.html
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/addListener/#com.doverunner.widevine.model.WvEventListener/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/add-listener.html
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/createLicenseCipher/#android.content.Context#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/create-license-cipher.html
-$dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/doCipher/#kotlin.ByteArray#kotlin.ByteArray/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/do-cipher.html
+$dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/doCipher/#kotlin.ByteArray/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/do-cipher.html
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/getCmcdConfigurationFactory/#/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/get-cmcd-configuration-factory.html
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/getLicenseCipher/#/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/get-license-cipher.html
 $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/getWvCallback/#/PointingToDeclaration/widevine/com.doverunner.widevine.util/-global-object-util/get-wv-callback.html
@@ -347,20 +343,6 @@ $dokka.location:com.doverunner.widevine.util/GlobalObjectUtil/setWvEventListener
 $dokka.location:com.doverunner.widevine.util/OneTime.Companion///PointingToDeclaration/widevine/com.doverunner.widevine.util/-one-time/-companion/index.html
 $dokka.location:com.doverunner.widevine.util/OneTime.Companion/getInstance/#android.content.Context/PointingToDeclaration/widevine/com.doverunner.widevine.util/-one-time/-companion/get-instance.html
 $dokka.location:com.doverunner.widevine.util/OneTime///PointingToDeclaration/widevine/com.doverunner.widevine.util/-one-time/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.AccessDenied///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-access-denied/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.Failed///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-failed/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.InvalidPath///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-invalid-path/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.NotDirectory///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-not-directory/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.NotEmpty///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-not-empty/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.NotEmpty/SdkUtil.DeleteResult.NotEmpty/#kotlin.Int/PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-not-empty/-sdk-util.-delete-result.-not-empty.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.NotEmpty/getFileCount/#/PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-not-empty/get-file-count.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.NotFound///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-not-found/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult.Success///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/-success/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil.DeleteResult///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/-delete-result/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil///PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/index.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil/checkFileExists/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/check-file-exists.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil/deleteDirectoryRecursively/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/delete-directory-recursively.html
-$dokka.location:com.doverunner.widevine.util/SdkUtil/getDirectoryFromFileUri/#kotlin.String/PointingToDeclaration/widevine/com.doverunner.widevine.util/-sdk-util/get-directory-from-file-uri.html
 com.doverunner.widevine.cmcd
 com.doverunner.widevine.db
 com.doverunner.widevine.exception
