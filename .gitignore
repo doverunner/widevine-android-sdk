@@ -26,4 +26,7 @@ implementation_guide/en/*.html
 
 
 widevinelibrary/.cxx/
-widevinelibrary/src/main/obj/
+widevinelibrary/src/main/obj/samples/simple/gradle.properties
+
+# Sample app credentials - each developer sets locally
+samples/*/gradle.properties
