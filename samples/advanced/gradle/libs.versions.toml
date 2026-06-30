@@ -1,6 +1,6 @@
 [versions]
 # DoveRunner
-drWvSDK = "4.5.2"
+drWvSDK = "4.5.3"
 licenseCipher = "1.6.1"
 cmcd = "1.0.0"
 
@@ -39,7 +39,7 @@ composeKotlinCompiler = "1.5.15"
 composeBom = "2025.08.01"
 
 # Media3
-media3 = "1.8.0"
+media3 = "1.10.0"
 
 # Network & Serialization
 gson = "2.13.1"

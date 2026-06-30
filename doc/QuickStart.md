@@ -5,7 +5,7 @@
 
 - Android 6.0 (API level 23) or later
 - This SDK has been tested on Gradle 8.12.2, Android Studio Chipmunk and will not work on the simulator.
-- This SDK supports Media3 1.8.0 (contact us about other versions.)
+- This SDK supports Media3 1.10.0 (contact us about other versions.)
     - Exoplayer 2.11 and earlier versions must be used with DrWVSDK v1.15.0.
     - Exoplayer 2.16 and earlier versions must be used with DrWVSDK v2.x.x.
     - ExoPlayer 2.18.1 and later versions must be used with DrWVSDK v4.3.2.
@@ -81,14 +81,14 @@ You can add the DoveRunner Widevine SDK to your development project by following
         implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
         // Exo
-        implementation "androidx.media3:media3-exoplayer:1.8.0"
-        implementation "androidx.media3:media3-ui:1.8.0"
-        implementation "androidx.media3:media3-exoplayer-dash:1.8.0"
-        implementation "androidx.media3:media3-exoplayer-hls:1.8.0"
-        implementation "androidx.media3:media3-exoplayer-rtsp:1.8.0"
-        implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.8.0"
-        implementation "androidx.media3:media3-datasource-okhttp:1.8.0"
-        implementation "androidx.media3:media3-cast:1.8.0"
+        implementation "androidx.media3:media3-exoplayer:1.10.0"
+        implementation "androidx.media3:media3-ui:1.10.0"
+        implementation "androidx.media3:media3-exoplayer-dash:1.10.0"
+        implementation "androidx.media3:media3-exoplayer-hls:1.10.0"
+        implementation "androidx.media3:media3-exoplayer-rtsp:1.10.0"
+        implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.10.0"
+        implementation "androidx.media3:media3-datasource-okhttp:1.10.0"
+        implementation "androidx.media3:media3-cast:1.10.0"
 
         // Gson
         implementation 'com.google.code.gson:gson:2.13.1'
@@ -268,7 +268,7 @@ You can add the DoveRunner Widevine SDK to your development project by following
       android:foregroundServiceType="dataSync"
       android:exported="false">
       <intent-filter>
-          <action android:name="com.google.android.exoplayer.downloadService.action.RESTART" />
+          <action android:name="androidx.media3.exoplayer.downloadService.action.RESTART" />
 
           <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>

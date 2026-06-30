@@ -3,7 +3,7 @@
   "component": {
     "group": "com.doverunner",
     "module": "widevine",
-    "version": "4.5.2",
+    "version": "4.5.3",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -33,13 +33,13 @@
       ],
       "files": [
         {
-          "name": "widevine-4.5.2.aar",
-          "url": "widevine-4.5.2.aar",
-          "size": 225298,
-          "sha512": "4abb1ac004c06b9e46b310d97dcf294e58315f9a8bc30174dd7ac9a6780b8d7106e5c2e5d6777890de345f03128c99d536fa18cb301aa9ca29aa7f413a9b1d48",
-          "sha256": "87a219413cbd62d624db8a31ad35842c31ef6899453d915285379f68dff957fb",
-          "sha1": "2b452b61b5c53c6eda7a3a4beaa9e515666dee47",
-          "md5": "f2f1535d09f66305768211255e4cd0d2"
+          "name": "widevine-4.5.3.aar",
+          "url": "widevine-4.5.3.aar",
+          "size": 225003,
+          "sha512": "0b2fc17c3e02a2e11dd3afbadf1fa460522aa1f43fb9c1bbae07a2498d2c87c1c91506813e136771e1ba5b93f97b4f259a0a6d6a8dbb3976e2feb3d642b7f22f",
+          "sha256": "3cd905e87a251a0caba55088b49d08128951c183cc942df6a1590bdb3e0fe721",
+          "sha1": "09f67b6921a24b9e5032875892a9a8686152c31c",
+          "md5": "a7375799eb8bb343b84c2e5fbfcb7e11"
         }
       ]
     },
@@ -105,42 +105,42 @@
           "group": "androidx.media3",
           "module": "media3-exoplayer",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
           "group": "androidx.media3",
           "module": "media3-exoplayer-dash",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
           "group": "androidx.media3",
           "module": "media3-exoplayer-hls",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
           "group": "androidx.media3",
           "module": "media3-exoplayer-rtsp",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
           "group": "androidx.media3",
           "module": "media3-exoplayer-smoothstreaming",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
           "group": "androidx.media3",
           "module": "media3-datasource-okhttp",
           "version": {
-            "requires": "1.8.0"
+            "requires": "1.10.0"
           }
         },
         {
@@ -167,13 +167,13 @@
       ],
       "files": [
         {
-          "name": "widevine-4.5.2.aar",
-          "url": "widevine-4.5.2.aar",
-          "size": 225298,
-          "sha512": "4abb1ac004c06b9e46b310d97dcf294e58315f9a8bc30174dd7ac9a6780b8d7106e5c2e5d6777890de345f03128c99d536fa18cb301aa9ca29aa7f413a9b1d48",
-          "sha256": "87a219413cbd62d624db8a31ad35842c31ef6899453d915285379f68dff957fb",
-          "sha1": "2b452b61b5c53c6eda7a3a4beaa9e515666dee47",
-          "md5": "f2f1535d09f66305768211255e4cd0d2"
+          "name": "widevine-4.5.3.aar",
+          "url": "widevine-4.5.3.aar",
+          "size": 225003,
+          "sha512": "0b2fc17c3e02a2e11dd3afbadf1fa460522aa1f43fb9c1bbae07a2498d2c87c1c91506813e136771e1ba5b93f97b4f259a0a6d6a8dbb3976e2feb3d642b7f22f",
+          "sha256": "3cd905e87a251a0caba55088b49d08128951c183cc942df6a1590bdb3e0fe721",
+          "sha1": "09f67b6921a24b9e5032875892a9a8686152c31c",
+          "md5": "a7375799eb8bb343b84c2e5fbfcb7e11"
         }
       ]
     },
@@ -187,13 +187,13 @@
       },
       "files": [
         {
-          "name": "widevine-4.5.2-sources.jar",
-          "url": "widevine-4.5.2-sources.jar",
-          "size": 61985,
-          "sha512": "9fc0a9f40fbc5cbbb9ed0c5cb5a3f8ef2638dc137521fa369d932f464d59edd046a1fcdbf59a70d9c16d92382618dcea569cbd5267fe41ab1947d52fbd0a565f",
-          "sha256": "f5536898113d4255151e30dc4a37b72349cb84edb9e6cb7b234eef30255ee80a",
-          "sha1": "4c430798d2c45a5f509e03392842080b87479d12",
-          "md5": "bce6ddff719e976d56547c84b55d79da"
+          "name": "widevine-4.5.3-sources.jar",
+          "url": "widevine-4.5.3-sources.jar",
+          "size": 62017,
+          "sha512": "41a053c633ef5337bc1b78bb6ea395c4ea432e3c2ac3c2b2bcb51f4179d193001ce563e44f99414ecb5a88869d697b6e3ee5b6addc6a2f58d03f7edc5f67ad82",
+          "sha256": "66a78cf8d4bf3e0993daea2cf1d2a57a6cb05dcbc4fc3f573cd2ae733d230fa3",
+          "sha1": "e8f9db67df5cecd09bb4c5baab9895b4f5ed4ca9",
+          "md5": "efe9fad458661f06998785253cc493d5"
         }
       ]
     },
@@ -207,13 +207,13 @@
       },
       "files": [
         {
-          "name": "widevine-4.5.2-javadoc.jar",
-          "url": "widevine-4.5.2-javadoc.jar",
-          "size": 518636,
-          "sha512": "82262aed530103fe4df8d093fdb8ff362d8574ffaaf3ea60eaffddb06ee79242d9a943e95aea429dd4543148b0bc056575f93f0279620fac9f4a8be5071ff6ca",
-          "sha256": "10b44ec5a72245b1acc5abb8d68644085399287b3d99484a2270373b2ea77252",
-          "sha1": "f3e31dc84512d503eed0485d4be1e7ab09e8b2d1",
-          "md5": "0897e30ec0103c5a4bb56f91ce50cf02"
+          "name": "widevine-4.5.3-javadoc.jar",
+          "url": "widevine-4.5.3-javadoc.jar",
+          "size": 518635,
+          "sha512": "7289abca3ae6f2186c206e32d17ae55424f12299450bb570e260de09ba57de77a290276af59c1c7e274411434a74528159ca7b0edef40294adc2886a7c37f624",
+          "sha256": "96c4f9774341743ed21574326695d607a917bcf07f86cb879de4af4a07fb91a0",
+          "sha1": "8a1d367e74beed528069b17d7cad3aba16954c5e",
+          "md5": "589447f45a440909e901198f6cc9ba5c"
         }
       ]
     }

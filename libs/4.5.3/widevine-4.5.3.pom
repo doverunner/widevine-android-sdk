@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.doverunner</groupId>
   <artifactId>widevine</artifactId>
-  <version>4.5.2</version>
+  <version>4.5.3</version>
   <packaging>aar</packaging>
   <name>widevine</name>
   <description>DoveRunner Widevine SDK</description>
@@ -84,37 +84,37 @@
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-exoplayer</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-exoplayer-dash</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-exoplayer-hls</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-exoplayer-rtsp</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-exoplayer-smoothstreaming</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-datasource-okhttp</artifactId>
-      <version>1.8.0</version>
+      <version>1.10.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
