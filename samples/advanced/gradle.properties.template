@@ -1,4 +1,0 @@
-# Copy this file to gradle.properties in the same directory
-# and fill in your GitHub Packages credentials
-gpr.user=your-email@doverunner.com
-gpr.key=YOUR_GITHUB_TOKEN_HERE

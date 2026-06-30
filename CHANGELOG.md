@@ -1,3 +1,15 @@
+# Version 4.5.3
+
+- **What’s changed**
+  - Updated AndroidX Media3 dependency from 1.8.0 to 1.10.0.
+  - Updated WvMediaDrmCallback for Media3 1.9.0+ breaking change: executeKeyRequest and executeProvisionRequest now return MediaDrmCallback.Response instead of ByteArray.
+    Compatibility
+
+- **Compatibilitys**
+  - Compatible with apps using Media3 1.10.0+.
+  - No changes to public SDK APIs; no app-side migration required.
+
+
 # Version 4.5.2
 
 - **What’s changed**
