@@ -151,15 +151,9 @@ You can add the DoveRunner Widevine SDK to your development project by following
       "uuid" // Set to an empty string if you don't know
   )
   
-  // localFileUrl: content URLs obtained from SDK 2.x.x or stored in external storage
-  // If the contentName used during download in version 2.x.x is TestRunner_User, you must set the URL as follows:
-  // var file = File(context.getExternalFilesDir(null), "TestRunner_User/stream.mpd")
-  // val localUrl = "file://${file.absolutePath}"
-  // localFileUrl = localUrl
   val data = ContentData(
       contentId = "content id",
       url = "content URL",
-      localFileUrl = "content URLs obtained from SDK 2.x.x or stored in external storage",
       drmConfig = config,
       cookie = null,
       httpHeaders = null
@@ -204,6 +198,18 @@ You can add the DoveRunner Widevine SDK to your development project by following
   // use MediaSource or MediaItem
   val mediaSource = wvSDK.getMediaSource()
   val mediaItem = wvSDK.getMediaItem()
+  ```
+
+* To force streaming playback even when the content is already downloaded (e.g. as a fallback when the offline license has expired), pass a `PlaybackOptions`. Both APIs accept it, and the downloaded content and its offline license are left untouched.
+
+  ```kotlin
+  val options = PlaybackOptions.Builder()
+      .setForceStreaming(true)
+      .build()
+
+  val mediaSource = wvSDK.getMediaSource(options)
+  // or
+  val mediaItem = wvSDK.getMediaItem(options)
   ```
 
 * Implement player in PlayerActivity.java using the below development guide.
@@ -305,7 +311,23 @@ val format = DashUtil.loadFormatWithDrmInitData(
 **Remove license**
 
 ```kotlin
+// Synchronous API. Blocks the calling thread until the license server round-trip
+// finishes, so call it on a background thread.
 wvSDK.removeLicense()
+
+// Asynchronous API (recommended). Does not block the calling thread; the local license
+// keys are invalidated immediately and the callbacks are delivered on the main thread.
+wvSDK.removeLicense(onSuccess = {
+    // license removed
+}, onFailed = { e ->
+    when (e) {
+        is WvException.LicenseNotFoundException -> {
+            // No license to remove: never downloaded or already removed.
+            // A retried removal can treat this as success.
+        }
+        else -> print(e.message())
+    }
+})
 ```
 
 ### **Block video recording**

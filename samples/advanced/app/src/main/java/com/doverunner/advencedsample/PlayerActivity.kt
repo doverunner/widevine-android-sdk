@@ -16,6 +16,7 @@ import com.doverunner.advencedsample.databinding.ActivityPlayerBinding
 import com.doverunner.widevine.exception.WvException
 import com.doverunner.widevine.model.ContentData
 import com.doverunner.widevine.model.DownloadState
+import com.doverunner.widevine.model.PlaybackOptions
 import com.doverunner.widevine.sdk.DrWvSDK
 
 class PlayerActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class PlayerActivity : AppCompatActivity() {
 
     companion object {
         const val CONTENT = "CONTENT_ITEM"
+        const val FORCE_STREAMING = "FORCE_STREAMING"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +49,12 @@ class PlayerActivity : AppCompatActivity() {
     private fun initializePlayer() {
         var content: ContentData? = null
         var mediaSource: MediaSource? = null
+
+        // Playback policy the app carries itself. The SDK keeps no state for it: it is passed at
+        // the getMediaSource() / getMediaItem() call, so the same DrWvSDK instance can hand out an
+        // offline MediaSource and a streaming one without being released and recreated.
+        val forceStreaming = intent.getBooleanExtra(FORCE_STREAMING, false)
+
         try {
             if (intent.hasExtra(CONTENT) && wvSDK == null) {
                 content = intent.getParcelableExtra(CONTENT)
@@ -58,17 +66,31 @@ class PlayerActivity : AppCompatActivity() {
                 }
             }
 
-            // mediaItem = wvSDK?.getMediaItem()
-            wvSDK?.getMediaSource()?.let { media ->
+            val playbackOptions = PlaybackOptions.Builder()
+                .setForceStreaming(forceStreaming)
+                .build()
+
+            wvSDK?.getMediaSource(playbackOptions)?.let { media ->
                 mediaSource = media
-                val drmConfiguration = media.mediaItem.localConfiguration?.drmConfiguration
-                if (drmConfiguration != null &&
-                    drmConfiguration.scheme != C.CLEARKEY_UUID) {
-                    wvSDK?.getDrmInformation()?.let {
-                        if ((it.licenseDuration <= 0 || it.playbackDuration <= 0) &&
-                            wvSDK?.getDownloadState() == DownloadState.COMPLETED) {
-                            Toast.makeText(applicationContext, "Expired license", Toast.LENGTH_LONG)
-                                .show()
+
+                // Offline license check. Only meaningful when this playback actually uses the
+                // downloaded offline license. With forceStreaming the license comes fresh from the
+                // license server, and getDrmInformation() would still report the (untouched,
+                // possibly expired) offline license sitting on disk -- reporting it here would be
+                // a false alarm.
+                if (!forceStreaming) {
+                    val drmConfiguration = media.mediaItem.localConfiguration?.drmConfiguration
+                    if (drmConfiguration != null &&
+                        drmConfiguration.scheme != C.CLEARKEY_UUID) {
+                        wvSDK?.getDrmInformation()?.let {
+                            if ((it.licenseDuration <= 0 || it.playbackDuration <= 0) &&
+                                wvSDK?.getDownloadState() == DownloadState.COMPLETED) {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Expired license",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
                         }
                     }
                 }
@@ -87,11 +109,55 @@ class PlayerActivity : AppCompatActivity() {
                 .show()
         }
 
-        // using mediaItem
+        // Alternative: using getMediaItem() instead of getMediaSource().
+        //
+        // getMediaSource() hands back a fully wired MediaSource. getMediaItem() only returns the
+        // MediaItem out of it, so ExoPlayer rebuilds the MediaSource with its own defaults and the
+        // wiring below is NOT optional -- you have to supply it yourself:
+        //
+        //   - setDataSourceFactory      : without it, downloaded (offline) content cannot be read
+        //   - setDrmSessionManagerProvider : without it, ExoPlayer uses its own default DRM callback,
+        //                                    so License Cipher and the license-server error callbacks
+        //                                    (WvLicenseServerException -> onFailed) are silently lost
+        //
+        // Pass the same PlaybackOptions to getMediaItem(), getDataSourceFactory() and
+        // getDrmSessionManager() so all three agree on offline vs streaming: with
+        // forceStreaming=false downloaded content plays from the download cache and decrypts with
+        // the downloaded offline license (works with no network), with forceStreaming=true the
+        // content streams from the remote URL and a fresh license is requested from the server.
+        //
+        // import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
         /*
-         ExoPlayer.Builer(this).setMediaSourceFactory(
-                DefaultMediaSourceFactory(this)
-                setDataSourceFactory(wvSDK!!.getDataSourceFactory())).build()
+        val playbackOptions = PlaybackOptions.Builder()
+            .setForceStreaming(forceStreaming)
+            .build()
+
+        // getMediaItem() throws the same exceptions as getMediaSource() (e.g.
+        // WvException.DetectedDeviceTimeModifiedException), so keep the SDK calls inside
+        // try/catch just like the getMediaSource() path above.
+        try {
+            val mediaItem = wvSDK!!.getMediaItem(playbackOptions)
+
+            ExoPlayer.Builder(this)
+                .setMediaSourceFactory(
+                    DefaultMediaSourceFactory(this)
+                        .setDataSourceFactory(wvSDK!!.getDataSourceFactory(playbackOptions))
+                        .setDrmSessionManagerProvider { wvSDK!!.getDrmSessionManager(playbackOptions) }
+                )
+                .build()
+                .also { player ->
+                    wvSDK?.setPlayer(player)
+                    player.setMediaItem(mediaItem)
+                    player.prepare()
+                    player.playWhenReady = true
+                }
+        } catch (e: WvException.DrmException) {
+            Toast.makeText(applicationContext, "DrmException", Toast.LENGTH_LONG).show()
+        } catch (e: WvException.DetectedDeviceTimeModifiedException) {
+            Toast.makeText(applicationContext, "DeviceTimeModified", Toast.LENGTH_LONG).show()
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "Exception", Toast.LENGTH_LONG).show()
+        }
         */
 
         if (mediaSource == null) {

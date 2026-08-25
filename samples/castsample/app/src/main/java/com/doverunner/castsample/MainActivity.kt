@@ -145,16 +145,12 @@ class MainActivity : AppCompatActivity() {
             contentData: com.doverunner.widevine.model.ContentData,
             e: WvLicenseServerException?
         ) {
-            val data = contents.find { it.content == contentData }
-            data?.let {
-                val index = contents.indexOf(it)
-                contents[index].subTitle = "Failed"
-                contents[index].status = DownloadState.FAILED
-                adapter?.notifyItemChanged(index)
-            }
-
+            // A server error here is informational: it also fires when the best-effort license
+            // release is rejected after a successful removeLicense(), so it must not flip the
+            // content state to FAILED. Success/failure of an operation is judged only by that
+            // operation's own callbacks.
             if (e != null && e.errorCode() != 7127) {
-                Toast.makeText(this@MainActivity, "Server Error - ${e!!.errorCode()}, ${e!!.message()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Server Error - ${e.errorCode()}, ${e.message()}", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -436,7 +432,12 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     1 -> wvSDK.renewLicense()
-                    2 -> wvSDK.removeLicense()
+                    2 -> wvSDK.removeLicense(onSuccess = {
+                        Toast.makeText(this@MainActivity, "success remove license", Toast.LENGTH_SHORT).show()
+                    }, onFailed = { e ->
+                        Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()
+                        print(e.msg)
+                    })
                     3 -> {
                         wvSDK.removeAll()
                         prepare()

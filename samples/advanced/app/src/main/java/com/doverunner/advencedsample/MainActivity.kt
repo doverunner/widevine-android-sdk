@@ -154,17 +154,14 @@ class MainActivity : AppCompatActivity() {
             contentData: com.doverunner.widevine.model.ContentData,
             e: WvLicenseServerException?,
         ) {
-            ObjectSingleton.getInstance().contents.withIndex()
-                .find { it.value.content == contentData }?.let { (index, data) ->
-                    ObjectSingleton.getInstance()
-                        .updateContentData(index, "Failed", DownloadState.FAILED)
-                    adapter?.updateItem(index, ObjectSingleton.getInstance().contents[index])
-                }
-
+            // A server error here is informational: it also fires when the best-effort license
+            // release is rejected after a successful removeLicense(), so it must not flip the
+            // content state to FAILED. Success/failure of an operation is judged only by that
+            // operation's own callbacks.
             if (e != null && e.errorCode() != 7127) {
                 Toast.makeText(
                     this@MainActivity,
-                    "Server Error - ${e!!.errorCode()}, ${e!!.message()}",
+                    "Server Error - ${e.errorCode()}, ${e.message()}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -348,6 +345,16 @@ override fun onResume() {
             TrackSelectDialog(contentData.downloadTracks!!) { track ->
                 try {
                     contentData.wvSDK.download(track)
+
+                    // onProgress() is only called once the license has been acquired and the first
+                    // bytes arrive. Update the item right away so the download button is replaced
+                    // by the stop button and the track dialog cannot be opened again meanwhile.
+                    val index = ObjectSingleton.getInstance().contents.indexOf(contentData)
+                    if (index != -1) {
+                        ObjectSingleton.getInstance()
+                            .updateContentData(index, "Downloading..", DownloadState.DOWNLOADING)
+                        adapter?.updateItem(index, ObjectSingleton.getInstance().contents[index])
+                    }
                 } catch (e: WvException) {
                     Toast.makeText(this@MainActivity, "${e.message}", Toast.LENGTH_SHORT).show()
                 }
@@ -395,11 +402,12 @@ override fun onResume() {
         contentData.wvSDK.stop()
     }
 
-    private fun playContent(contentData: ContentData) {
+    private fun playContent(contentData: ContentData, forceStreaming: Boolean = false) {
         val intent = Intent(this, PlayerActivity::class.java)
 
         intent.apply {
             this.putExtra(PlayerActivity.CONTENT, contentData.content)
+            this.putExtra(PlayerActivity.FORCE_STREAMING, forceStreaming)
         }
         startActivity(intent)
     }
@@ -418,7 +426,8 @@ override fun onResume() {
                 "license info",
                 "downloaded file info",
                 "KeySetId",
-                "re-provisioning"
+                "re-provisioning",
+                "play (force streaming)"
             )
         ) { _, i ->
             val wvSDK = contentData.wvSDK
@@ -443,7 +452,22 @@ override fun onResume() {
                         }
                     }
                     3 -> wvSDK.renewLicense()
-                    4 -> wvSDK.removeLicense()
+                    4 -> wvSDK.removeLicense(onSuccess = {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "success remove license",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }, onFailed = { e ->
+                        val message = when (e) {
+                            is WvException.LicenseNotFoundException ->
+                                "license already removed"
+                            else -> e.message()
+                        }
+                        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT)
+                            .show()
+                        print(e.msg)
+                    })
                     5 -> {
                         wvSDK.removeAll()
                         prepare()
@@ -484,6 +508,7 @@ override fun onResume() {
                             print(e.message())
                         })
                     }
+                    10 -> playContent(contentData, forceStreaming = true)
                 }
             } catch (e: WvException.DrmException) {
                 Toast.makeText(this@MainActivity, "${e.message()}", Toast.LENGTH_SHORT).show()

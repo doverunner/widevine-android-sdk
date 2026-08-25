@@ -42,7 +42,6 @@ dependencies {
 
     implementation(libs.doverunner.widevine)
 //    implementation(libs.doverunner.drdlc)
-//    implementation(project(":widevine"))
 //    implementation(project(":drdlc"))
 
     implementation(libs.androidx.core.ktx)

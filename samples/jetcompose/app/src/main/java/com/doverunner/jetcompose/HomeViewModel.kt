@@ -120,12 +120,14 @@ class HomeViewModel : ViewModel() {
             contentData: com.doverunner.widevine.model.ContentData,
             e: WvLicenseServerException?
         ) {
-            updateContentDataFromListners(contentData.url, "Failed", DownloadState.FAILED)
-
+            // A server error here is informational: it also fires when the best-effort license
+            // release is rejected after a successful removeLicense(), so it must not flip the
+            // content state to FAILED. Success/failure of an operation is judged only by that
+            // operation's own callbacks.
             if (e != null && e.errorCode() != 7127) {
                 scope.launch(Dispatchers.Main) {
                     context?.let { context ->
-                        Toast.makeText(context, "Server Error - ${e!!.errorCode()}, ${e!!.message()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Server Error - ${e.errorCode()}, ${e.message()}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

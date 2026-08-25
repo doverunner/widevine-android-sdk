@@ -49,7 +49,8 @@ class ObjectSingleton {
             val title: String,
             val contentId: String,
             val url: String,
-            val drmConfig: DrmConfigration
+            val drmConfig: DrmConfigration,
+            val cookie: String? = null
         )
 
         val inputs = listOf(
@@ -95,7 +96,8 @@ class ObjectSingleton {
             val data = com.doverunner.widevine.model.ContentData(
                 contentId = input.contentId,
                 url = input.url,
-                drmConfig = input.drmConfig
+                drmConfig = input.drmConfig,
+                cookie = input.cookie
             )
             val sdk = DrWvSDK.createWvSDK(context, data)
             val state = sdk.getDownloadState()

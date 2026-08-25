@@ -1,3 +1,40 @@
+# Version 4.6.3
+
+- **What's new**
+  - Added `removeLicense(onSuccess, onFailed)` — an asynchronous overload that does not block the calling thread. Callbacks are delivered on the main thread.
+  - Added `LicenseNotFoundException` — reported by `removeLicense()` (thrown by the synchronous API, delivered to `onFailed` by the asynchronous one) when there is no license to remove because it was never downloaded or has already been removed. An app retrying a removal (e.g. after its own bookkeeping failed) can treat this case as already completed instead of parsing error messages.
+
+- **Bug fixes**
+  - Fixed the license being requested again on every re-prepare (`setMediaItem` + `prepare`) of the same player when using `getDrmSessionManager()` / `getMediaSource()`. With short-lived license tokens this caused `Token is Expired` when playback resumed after the token had expired (e.g. returning from background).
+  - Fixed stale DRM session state surviving `remove()` / `removeLicense()`. Playing content after deleting it now always starts from a clean DRM session, so the license server receives a well-formed request again instead of failing to parse one built on the removed license.
+
+- **What's changed**
+  - The AAR now ships consumer R8/ProGuard rules, so apps with minification enabled no longer need to add keep rules for the SDK manually.
+  - `removeLicense()` no longer retries the server release and caps the request at 5 seconds. The local license keys are always invalidated immediately; notifying the server is best-effort, so the worst-case latency drops from 40+ seconds to a few seconds on a poor network.
+  - `removeLicense()` is now idempotent: after a successful removal the removed key set ID is also cleared from local storage, so calling `removeLicense()` again reports `LicenseNotFoundException` deterministically instead of failing inside `MediaDrm` with a stale key set ID.
+
+# Version 4.6.2
+
+- **What’s new**
+  - Added `getMediaItem(playbackOptions)` — the force-streaming option introduced in 4.6.0 is now also available on the `MediaItem` path, so player setups built on `getMediaItem()` (e.g. Google IMA ads integration) can force streaming playback over already-downloaded content.
+
+# Version 4.6.1
+
+- **Bug fixes**
+  - Fixed the cookies/headers provided in `ContentData` not being included in the segment requests during download and playback.
+  - Fixed a crash when the HLS manifest request failed while preparing a download.
+
+# Version 4.6.0
+
+- **What’s new**
+  - Added `PlaybackOptions` — an option to force streaming playback even when the content is already downloaded (`getMediaSource(playbackOptions)`).
+  - Added `DownloadErrorReason` — distinguishes the failure cause of `remove()`/`removeAll()` (`NOT_FOUND` / `REMOVE_FAILED`).
+
+- **Bug fixes**
+  - Fixed `stop()` being ignored when called while the license request was in progress.
+  - Fixed `remove()`/`removeAll()` not reporting the failure cause.
+  - Fixed the download state not returning from `REMOVING` to `NOT` after `remove()` completed.
+
 # Version 4.5.3
 
 - **What’s changed**

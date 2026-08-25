@@ -157,11 +157,11 @@ fun ContentListItem(
                     }) { Text(text = "renew license") }
 
                     TextButton(onClick = {
-                        try {
-                            wvSDK.removeLicense()
-                        } catch (e: WvException.DrmException) {
+                        wvSDK.removeLicense(onSuccess = {
+                            Toast.makeText(context, "success remove license", Toast.LENGTH_SHORT).show()
+                        }, onFailed = { e ->
                             Toast.makeText(context, "${e.message()}", Toast.LENGTH_SHORT).show()
-                        }
+                        })
                     }) { Text(text = "remove license") }
 
                     TextButton(onClick = {
